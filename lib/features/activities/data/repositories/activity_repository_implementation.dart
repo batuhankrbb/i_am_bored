@@ -1,13 +1,12 @@
-import 'package:im_bored_app/core/error_handling/custom_failure.dart';
-import 'package:im_bored_app/core/network_checking/network_checker_contract.dart';
-import 'package:im_bored_app/core/result_types/result.dart';
-import 'package:im_bored_app/features/activities/data/data_sources/contracts/local_data_source_contract.dart';
-import 'package:im_bored_app/features/activities/data/data_sources/contracts/remote_data_source_contract.dart';
-import 'package:im_bored_app/features/activities/data/data_sources/exceptions/activity_exceptions.dart';
-import 'package:im_bored_app/features/activities/data/exception_handling/activity_exception_handler.dart';
-import 'package:im_bored_app/features/activities/data/models/activity_model.dart';
-import 'package:im_bored_app/features/activities/domain/entities/activity_entity.dart';
-import 'package:im_bored_app/features/activities/domain/repositories/activity_repository.dart';
+import '../../../../core/network_checking/network_checker_contract.dart';
+import '../../../../core/result_types/result.dart';
+import '../../domain/entities/activity_entity.dart';
+import '../../domain/repositories/activity_repository.dart';
+import '../data_sources/contracts/local_data_source_contract.dart';
+import '../data_sources/contracts/remote_data_source_contract.dart';
+import '../data_sources/exceptions/activity_exceptions.dart';
+import '../exception_handling/activity_exception_handler.dart';
+import '../models/activity_model.dart';
 
 class ActivityRepositoryImplementation implements ActivityRepositoryContract {
   final ActivityLocalDataSourceContract localDataSourceContract;

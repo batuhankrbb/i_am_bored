@@ -1,5 +1,5 @@
-import 'package:im_bored_app/core/network/base_network_model.dart';
-import 'package:im_bored_app/features/activities/domain/entities/activity_entity.dart';
+import '../../../../core/network/base_network_model.dart';
+import '../../domain/entities/activity_entity.dart';
 
 class ActivityModel extends BaseNetworkModel<ActivityModel> {
   final String activity;

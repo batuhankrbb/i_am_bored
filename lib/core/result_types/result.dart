@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:im_bored_app/core/error_handling/custom_failure.dart';
+import '../error_handling/custom_failure.dart';
 
 part 'result.freezed.dart';
 

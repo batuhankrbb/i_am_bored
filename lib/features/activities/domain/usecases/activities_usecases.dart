@@ -1,6 +1,6 @@
-import 'package:im_bored_app/core/result_types/result.dart';
-import 'package:im_bored_app/features/activities/domain/entities/activity_entity.dart';
-import 'package:im_bored_app/features/activities/domain/repositories/activity_repository.dart';
+import '../../../../core/result_types/result.dart';
+import '../entities/activity_entity.dart';
+import '../repositories/activity_repository.dart';
 
 class GetRandomActivity {
   final ActivityRepositoryContract repositoryContract;

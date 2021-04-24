@@ -1,5 +1,5 @@
-import 'package:im_bored_app/core/error_handling/custom_failure.dart';
-import 'package:im_bored_app/features/activities/data/data_sources/exceptions/activity_exceptions.dart';
+import '../../../../core/error_handling/custom_failure.dart';
+import '../data_sources/exceptions/activity_exceptions.dart';
 
 class ActivityExceptionHandler {
   CustomFailure handleException(ActivityException exception) {

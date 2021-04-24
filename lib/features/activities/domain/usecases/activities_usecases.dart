@@ -37,7 +37,7 @@ class SaveActivityAsFavorite {
 
   SaveActivityAsFavorite({required this.repositoryContract});
 
-  Future<bool> execute(ActivityEntity entity) {
+  Future<Result<bool>> execute(ActivityEntity entity) {
     return repositoryContract.saveActivityAsFavorite(entity);
   }
 }

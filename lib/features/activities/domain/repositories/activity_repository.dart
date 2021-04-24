@@ -6,5 +6,5 @@ abstract class ActivityRepositoryContract {
   Future<Result<ActivityEntity>> getActivityByType(String type);
 
   Future<Result<List<ActivityEntity>>> getFavoriteActivities();
-  Future<bool> saveActivityAsFavorite(ActivityEntity activity);
+  Future<Result<bool>> saveActivityAsFavorite(ActivityEntity activity);
 }

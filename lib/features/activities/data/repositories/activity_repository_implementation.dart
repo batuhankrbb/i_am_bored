@@ -4,8 +4,8 @@ import '../../domain/entities/activity_entity.dart';
 import '../../domain/repositories/activity_repository.dart';
 import '../data_sources/contracts/local_data_source_contract.dart';
 import '../data_sources/contracts/remote_data_source_contract.dart';
-import '../data_sources/exceptions/activity_exceptions.dart';
-import '../exception_handling/activity_exception_handler.dart';
+import '../exception_handling/exceptions/activity_exceptions.dart';
+import '../exception_handling/handler/activity_exception_handler.dart';
 import '../models/activity_model.dart';
 
 class ActivityRepositoryImplementation implements ActivityRepositoryContract {

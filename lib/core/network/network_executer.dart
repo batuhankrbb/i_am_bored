@@ -5,7 +5,7 @@ import 'network_requestor.dart';
 
 class NetworkExecuter{
   Future<K?> execute<T extends BaseNetworkModel, K>(
-      T responseType, NetworkOptionsGenerator options) async {
+      {required T responseType, required NetworkOptionsGenerator options}) async {
 
     NetworkRequestor requestor = NetworkRequestor(networkOptions: options);
       var response = await requestor.sendRequest();

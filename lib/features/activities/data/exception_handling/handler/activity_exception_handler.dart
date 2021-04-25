@@ -1,5 +1,5 @@
-import '../../../../core/error_handling/custom_failure.dart';
-import '../data_sources/exceptions/activity_exceptions.dart';
+import '../../../../../core/error_handling/custom_failure.dart';
+import '../exceptions/activity_exceptions.dart';
 
 class ActivityExceptionHandler {
   CustomFailure handleException(ActivityException exception) {
@@ -16,7 +16,9 @@ class ActivityExceptionHandler {
           message: "It seems like you have some connection problems.");
     } else if (exception is DeletingActivityException) {
       return CustomFailure(message: "Oh! We couldn't delete this favorite.");
-    } else {
+    } else if (exception is ForbiddenActivityException){
+       return CustomFailure(message: "Oh! What you are trying to do is forbidden.");
+    }else {
       throw Exception("App Crashed in ActivityExceptionHandler");
     }
   }

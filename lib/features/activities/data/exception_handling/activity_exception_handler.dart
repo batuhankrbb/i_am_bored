@@ -12,7 +12,10 @@ class ActivityExceptionHandler {
           message:
               "Oh! You have no internet connection and It's your first time.");
     } else if (exception is NoInternetException) {
-      return CustomFailure(message: "It seems like you have some connection problems.");
+      return CustomFailure(
+          message: "It seems like you have some connection problems.");
+    } else if (exception is DeletingActivityException) {
+      return CustomFailure(message: "Oh! We couldn't delete this favorite.");
     } else {
       throw Exception("App Crashed in ActivityExceptionHandler");
     }

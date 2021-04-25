@@ -64,6 +64,15 @@ class ActivityRepositoryImplementation implements ActivityRepositoryContract {
     }
   }
 
+  @override
+  Future<Result<bool>> deleteFavoriteActivity(String key) async {
+    try {
+      return localDataSourceContract.deleteFavoriteActivity(key);
+    } on ActivityException catch (e) {
+      return Result.failure(exceptionHandler.handleException(e));
+    }
+  }
+
   Future<ActivityModel> _getLastFavorite() async {
     var lastFavorite = await localDataSourceContract.getLastFavoriteActivity();
     return lastFavorite;

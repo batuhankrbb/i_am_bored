@@ -41,3 +41,13 @@ class SaveActivityAsFavorite {
     return repositoryContract.saveActivityAsFavorite(entity);
   }
 }
+
+class DeleteFavoriteActivity{
+     final ActivityRepositoryContract repositoryContract;
+
+  DeleteFavoriteActivity({required this.repositoryContract});
+
+   Future<Result<bool>> execute(String key) {
+    return repositoryContract.deleteFavoriteActivity(key);
+  }
+}

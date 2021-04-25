@@ -19,3 +19,7 @@ class UnknownRemoteException extends ActivityException{
 class NoInternetException extends ActivityException{
   NoInternetException({Exception? exception}) : super(exception: exception);
 }
+
+class DeletingActivityException extends ActivityException{
+  DeletingActivityException({Exception? exception}) : super(exception: exception);
+}

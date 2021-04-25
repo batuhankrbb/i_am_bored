@@ -10,13 +10,11 @@ abstract class _HomeViewModel with Store {
   final GetRandomActivity getRandomActivityUseCase;
   final GetActivityByType getActivityByTypeUseCase;
   final SaveActivityAsFavorite saveActivityAsFavoriteUseCase;
-  final GetFavoriteActivities getFavoriteActivitiesUseCase;
 
   _HomeViewModel(
       {required this.getRandomActivityUseCase,
       required this.getActivityByTypeUseCase,
-      required this.saveActivityAsFavoriteUseCase,
-      required this.getFavoriteActivitiesUseCase});
+      required this.saveActivityAsFavoriteUseCase});
 
   @action
   Future<void> getActivityByType(String type) async {

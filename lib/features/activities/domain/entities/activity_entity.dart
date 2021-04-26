@@ -4,7 +4,7 @@ class ActivityEntity {
   final String activity;
   final String type;
   final String price;
-  final double accessibility;
+  final num accessibility;
 
   ActivityModel model;
 

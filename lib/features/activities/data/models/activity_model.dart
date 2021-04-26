@@ -5,10 +5,10 @@ class ActivityModel extends BaseNetworkModel<ActivityModel> {
   final String activity;
   final String type;
   final int participants;
-  final double price;
+  final num price;
   final String link;
   final String key;
-  final double accessibility;
+  final num accessibility;
 
   ActivityModel(
       {required this.activity,
@@ -33,6 +33,7 @@ class ActivityModel extends BaseNetworkModel<ActivityModel> {
 
   @override
   ActivityModel fromJson(Map<String, dynamic> json) {
+    print("act: ${json["activity"]} \ntype: ${json["type"]} \nparticipants: ${json["participants"]} \nprice: ${json["price"]} \nlink: ${json["link"]} \nkey: ${json["key"]} \naccess: ${json["accessibility"]}");
     return ActivityModel(
         activity: json["activity"],
         type: json["type"],
@@ -53,7 +54,10 @@ class ActivityModel extends BaseNetworkModel<ActivityModel> {
         model: this);
   }
 
+  @override
+  String toString() {
+    return "activity: $activity type: $type participants: $participants price: $price link: $link key: $key accessibility: $accessibility";
+  }
 }
-
 
 //! sorun -> save ederken model olarak save etmek istiyorum.

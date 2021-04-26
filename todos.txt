@@ -1,0 +1,6 @@
+//TODO Implement LocalDataSource for Activity
+//TODO Convert "type" to Enum
+//TODO finish HomeViewModel
+//TODO finish FavoritesViewModel
+//TODO add dependency injection with GetIt
+//TODO Build UI (make core files like constants, extensions etc. while building.)

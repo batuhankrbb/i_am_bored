@@ -22,6 +22,9 @@ abstract class _HomeViewModel with Store {
       required this.saveActivityAsFavoriteUseCase,
       required this.context});
 
+  @observable
+  StateResult<ActivityEntity> activityStateResult = StateResult.initial();
+
   @action
   Future<void> getActivityByType(ActivityType type) async {
     activityStateResult = StateResult.loading();
@@ -46,7 +49,6 @@ abstract class _HomeViewModel with Store {
 
   @action
   Future<void> saveActivityAsFavorite(ActivityEntity entity) async {
-    activityStateResult = StateResult.loading();
     var result = await saveActivityAsFavoriteUseCase.execute(entity);
     result.when(success: (_) {
       _showAlertDialog("Activity is added to favorite successfully.");
@@ -55,19 +57,16 @@ abstract class _HomeViewModel with Store {
     });
   }
 
-  _showAlertDialog(String message) {
+  void _showAlertDialog(String message) {
     showDialog(
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text("Hello"),
+            title: Text("Great!"),
             content: Text(message),
           );
         });
   }
-
-  @observable
-  StateResult<ActivityEntity> activityStateResult = StateResult.initial();
 }
 
 //getactivitybytype

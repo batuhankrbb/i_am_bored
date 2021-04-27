@@ -37,7 +37,7 @@ class SaveActivityAsFavorite {
 
   SaveActivityAsFavorite({required this.repositoryContract});
 
-  Future<Result<bool>> execute(ActivityEntity entity) {
+  Future<Result<void>> execute(ActivityEntity entity) {
     return repositoryContract.saveActivityAsFavorite(entity);
   }
 }
@@ -47,7 +47,7 @@ class DeleteFavoriteActivity{
 
   DeleteFavoriteActivity({required this.repositoryContract});
 
-   Future<Result<bool>> execute(String key) {
+   Future<Result<void>> execute(String key) {
     return repositoryContract.deleteFavoriteActivity(key);
   }
 }

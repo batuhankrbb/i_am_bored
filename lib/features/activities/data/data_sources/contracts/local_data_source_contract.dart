@@ -3,7 +3,7 @@ import '../../../domain/entities/activity_entity.dart';
 
 abstract class ActivityLocalDataSourceContract {
   Future<List<ActivityEntity>> getFavoriteActivities();
-  Future<bool> saveActivityAsFavorite(ActivityEntity entity);
   Future<ActivityEntity> getCachedActivity();
-  Future<Result<bool>> deleteFavoriteActivity(String key);
+  Future<void> saveActivityAsFavorite(ActivityEntity entity);
+  Future<void> deleteFavoriteActivity(String key);
 }

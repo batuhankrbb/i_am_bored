@@ -6,7 +6,6 @@ abstract class ActivityRepositoryContract {
   Future<Result<ActivityEntity>> getActivityByType(String type);
 
   Future<Result<List<ActivityEntity>>> getFavoriteActivities();
-  Future<Result<bool>> saveActivityAsFavorite(ActivityEntity activity);
-
-  Future<Result<bool>> deleteFavoriteActivity(String key);
+  Future<Result<void>> saveActivityAsFavorite(ActivityEntity activity);
+  Future<Result<void>> deleteFavoriteActivity(String key);
 }

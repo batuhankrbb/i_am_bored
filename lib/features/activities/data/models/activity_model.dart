@@ -50,8 +50,7 @@ class ActivityModel extends BaseNetworkModel<ActivityModel> {
         activity: activity,
         type: type,
         price: convertedPrice,
-        accessibility: accessibility,
-        model: this);
+        accessibility: accessibility);
   }
 
   @override
@@ -59,5 +58,3 @@ class ActivityModel extends BaseNetworkModel<ActivityModel> {
     return "activity: $activity type: $type participants: $participants price: $price link: $link key: $key accessibility: $accessibility";
   }
 }
-
-//! sorun -> save ederken model olarak save etmek istiyorum.

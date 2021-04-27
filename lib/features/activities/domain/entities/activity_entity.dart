@@ -6,12 +6,9 @@ class ActivityEntity {
   final String price;
   final num accessibility;
 
-  ActivityModel model;
-
   ActivityEntity(
       {required this.activity,
       required this.type,
       required this.price,
-      required this.accessibility,
-      required this.model});
+      required this.accessibility});
 }

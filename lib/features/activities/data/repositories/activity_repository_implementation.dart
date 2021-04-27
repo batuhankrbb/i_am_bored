@@ -46,8 +46,8 @@ class ActivityRepositoryImplementation implements ActivityRepositoryContract {
   Future<Result<List<ActivityEntity>>> getFavoriteActivities() async {
     try {
       var activities = await localDataSourceContract
-          .getFavoriteActivities(); //check error handling -type 1
-      return Success(activities.map((e) => e.toEntity()).toList());
+          .getFavoriteActivities();
+      return Success(activities);
     } on ActivityException catch (e) {
       return Result.failure(exceptionHandler.handleException(e));
     }
@@ -57,7 +57,7 @@ class ActivityRepositoryImplementation implements ActivityRepositoryContract {
   Future<Result<bool>> saveActivityAsFavorite(ActivityEntity activity) async {
     try {
       var result =
-          await localDataSourceContract.saveActivityAsFavorite(activity.model);
+          await localDataSourceContract.saveActivityAsFavorite(activity);
       return Result.success(result);
     } on ActivityException catch (e) {
       return Result.failure(exceptionHandler.handleException(e));
@@ -73,20 +73,22 @@ class ActivityRepositoryImplementation implements ActivityRepositoryContract {
     }
   }
 
-  Future<ActivityModel> _getLastFavorite() async {
-    var lastFavorite = await localDataSourceContract.getLastFavoriteActivity();
-    return lastFavorite;
+  Future<ActivityEntity> _getCachedActivity() async {
+    var cachedActivity = await localDataSourceContract.getCachedActivity();
+    return cachedActivity;
   }
 
   Future<Result<ActivityEntity>> _fetchFromNetworkWithNetworkChecking(
       Future<ActivityModel> Function() getActivity) async {
+
     if (await networkCheckerContract.isConnected()) {
-      var activity = await getActivity(); //check error handling -type 2
+      var activity = await getActivity(); 
       return Result<ActivityEntity>.success(activity.toEntity());
     } else {
       var activity =
-          await _getLastFavorite(); //it's already checked in _getLastFavorite
-      return Result<ActivityEntity>.success(activity.toEntity());
+          await _getCachedActivity();
+      return Result<ActivityEntity>.success(activity);
     }
   }
+
 }

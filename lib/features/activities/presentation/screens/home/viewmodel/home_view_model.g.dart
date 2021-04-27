@@ -29,7 +29,7 @@ mixin _$HomeViewModel on _HomeViewModel, Store {
       AsyncAction('_HomeViewModel.getActivityByType');
 
   @override
-  Future<void> getActivityByType(String type) {
+  Future<void> getActivityByType(ActivityType type) {
     return _$getActivityByTypeAsyncAction
         .run(() => super.getActivityByType(type));
   }
@@ -40,6 +40,15 @@ mixin _$HomeViewModel on _HomeViewModel, Store {
   @override
   Future<void> getRandomActivity() {
     return _$getRandomActivityAsyncAction.run(() => super.getRandomActivity());
+  }
+
+  final _$saveActivityAsFavoriteAsyncAction =
+      AsyncAction('_HomeViewModel.saveActivityAsFavorite');
+
+  @override
+  Future<void> saveActivityAsFavorite(ActivityEntity entity) {
+    return _$saveActivityAsFavoriteAsyncAction
+        .run(() => super.saveActivityAsFavorite(entity));
   }
 
   @override

@@ -1,7 +1,5 @@
-import 'package:im_bored_app/core/result_types/result.dart';
-import 'package:im_bored_app/features/activities/domain/entities/activity_entity.dart';
-
-import '../../models/activity_model.dart';
+import '../../../../../core/result_types/result.dart';
+import '../../../domain/entities/activity_entity.dart';
 
 abstract class ActivityLocalDataSourceContract {
   Future<List<ActivityEntity>> getFavoriteActivities();

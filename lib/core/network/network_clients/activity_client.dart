@@ -1,5 +1,6 @@
-import 'package:im_bored_app/core/network/network_option_generator.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../network_fetching/network_option_generator.dart';
 
 part 'activity_client.freezed.dart';
 

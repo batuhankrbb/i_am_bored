@@ -1,4 +1,4 @@
-import '../../data/models/activity_model.dart';
+
 
 class ActivityEntity {
   final String activity;

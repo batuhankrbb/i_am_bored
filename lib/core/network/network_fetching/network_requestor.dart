@@ -1,6 +1,6 @@
 
 import 'package:dio/dio.dart';
-import 'package:im_bored_app/core/network/network_option_generator.dart';
+import 'network_option_generator.dart';
 
 class NetworkRequestor {
   late final NetworkOptionsGenerator networkOptions;

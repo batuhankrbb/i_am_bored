@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:im_bored_app/core/network/base_network_model.dart';
+
+import 'base_network_model.dart';
 
 class NetworkConverter {
   Response response;

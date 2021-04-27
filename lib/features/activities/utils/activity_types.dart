@@ -1,4 +1,4 @@
-import 'package:im_bored_app/core/network_clients/activity_client.dart';
+
 
 enum ActivityType {
   education,

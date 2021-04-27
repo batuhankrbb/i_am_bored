@@ -1,4 +1,4 @@
-import 'package:im_bored_app/features/activities/data/models/activity_model.dart';
+import '../../features/activities/data/models/activity_model.dart';
 
 ActivityModel DEFAULT_ACTIVITY_MODEL = ActivityModel(
     activity: "",

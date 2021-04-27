@@ -1,4 +1,4 @@
-import '../../../../core/network_checking/network_checker_contract.dart';
+import '../../../../core/network/network_checking/network_checker_contract.dart';
 import '../../../../core/result_types/result.dart';
 import '../../domain/entities/activity_entity.dart';
 import '../../domain/repositories/activity_repository.dart';

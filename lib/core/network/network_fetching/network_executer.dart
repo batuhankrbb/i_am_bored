@@ -1,5 +1,5 @@
-import 'package:im_bored_app/core/network/network_converter.dart';
 import 'base_network_model.dart';
+import 'network_converter.dart';
 import 'network_option_generator.dart';
 import 'network_requestor.dart';
 

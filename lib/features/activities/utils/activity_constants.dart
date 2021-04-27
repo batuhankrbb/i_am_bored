@@ -1,4 +1,4 @@
-import 'package:im_bored_app/features/activities/utils/activity_types.dart';
+import 'activity_types.dart';
 
 class ActivityConstants {
   static List<ActivityType> allActivityTypes = [

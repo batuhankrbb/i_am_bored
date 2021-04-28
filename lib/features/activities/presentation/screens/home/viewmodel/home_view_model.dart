@@ -14,13 +14,14 @@ abstract class _HomeViewModel with Store {
   final GetRandomActivity getRandomActivityUseCase;
   final GetActivityByType getActivityByTypeUseCase;
   final SaveActivityAsFavorite saveActivityAsFavoriteUseCase;
+  final DeleteFavoriteActivity deleteFavoriteActivityUseCase;
   BuildContext context;
 
   _HomeViewModel(
       {required this.getRandomActivityUseCase,
       required this.getActivityByTypeUseCase,
       required this.saveActivityAsFavoriteUseCase,
-      required this.context});
+      required this.context, required this.deleteFavoriteActivityUseCase});
 
   @observable
   StateResult<ActivityEntity> activityStateResult = StateResult.initial();
@@ -52,6 +53,16 @@ abstract class _HomeViewModel with Store {
     var result = await saveActivityAsFavoriteUseCase.execute(entity);
     result.when(success: (_) {
       _showAlertDialog("Activity is added to favorite successfully.");
+    }, failure: (failure) {
+      _showAlertDialog(failure.message);
+    });
+  }
+
+  @action 
+  Future<void> removeActivityFromFavorite(ActivityEntity entity) async{
+    var result = await deleteFavoriteActivityUseCase.execute(entity.key);
+    result.when(success: (_) {
+      _showAlertDialog("Activity is removed successfully");
     }, failure: (failure) {
       _showAlertDialog(failure.message);
     });

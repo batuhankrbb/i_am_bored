@@ -34,7 +34,8 @@ class ActivityModel extends BaseNetworkModel<ActivityModel> {
 
   @override
   ActivityModel fromJson(Map<String, dynamic> json) {
-    print("act: ${json["activity"]} \ntype: ${json["type"]} \nparticipants: ${json["participants"]} \nprice: ${json["price"]} \nlink: ${json["link"]} \nkey: ${json["key"]} \naccess: ${json["accessibility"]}");
+    print(
+        "act: ${json["activity"]} \ntype: ${json["type"]} \nparticipants: ${json["participants"]} \nprice: ${json["price"]} \nlink: ${json["link"]} \nkey: ${json["key"]} \naccess: ${json["accessibility"]}");
     return ActivityModel(
         activity: json["activity"],
         type: json["type"],
@@ -51,7 +52,8 @@ class ActivityModel extends BaseNetworkModel<ActivityModel> {
         activity: activity,
         type: type,
         price: convertedPrice,
-        accessibility: accessibility);
+        accessibility: accessibility,
+        key: key);
   }
 
   @override

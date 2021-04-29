@@ -1,3 +1,3 @@
-//TODO Refactor code (eg: hiding repository in UseCases, error printings)
+//TODO Remake LocalDataSource
 //TODO Build UI (make core files like constants, extensions etc. while building.)
 //TODO Bind UI and Logic

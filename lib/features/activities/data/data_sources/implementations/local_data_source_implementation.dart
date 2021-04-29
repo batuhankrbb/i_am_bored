@@ -19,7 +19,7 @@ class ActivityLocalDataSourceImplementation
         throw DeletingActivityException();
       }
     } catch (e) {
-      printError(
+      ErrorHelper().printError(
           "ActivityLocalDataSourceImplementation/deleteFavoriteActivity", e);
       throw DeletingActivityException();
     }
@@ -32,7 +32,7 @@ class ActivityLocalDataSourceImplementation
       ActivityEntityHive activity = box.get(HiveConstants.CACHED_ITEM)!;
       return activity.toEntity();
     } catch (e) {
-       printError(
+      ErrorHelper().printError(
           "ActivityLocalDataSourceImplementation/getCachedActivity", e);
       throw ActivityNoCachedException();
     }
@@ -46,7 +46,7 @@ class ActivityLocalDataSourceImplementation
       var values = box.values.map((e) => e.toEntity()).toList();
       return values;
     } catch (e) {
-      printError(
+      ErrorHelper().printError(
           "ActivityLocalDataSourceImplementation/getFavoriteActivities", e);
       throw UnknownLocalException();
     }
@@ -59,7 +59,7 @@ class ActivityLocalDataSourceImplementation
           await Hive.openBox<ActivityEntityHive>(HiveConstants.FAVORITES_BOX);
       box.put(entity.key, ActivityEntityHive.fromEntity(entity));
     } catch (e) {
-      printError(
+      ErrorHelper().printError(
           "ActivityLocalDataSourceImplementation/saveActivityAsFavorite", e);
       throw UnknownLocalException();
     }
@@ -71,25 +71,10 @@ class ActivityLocalDataSourceImplementation
       var box = await Hive.openBox<ActivityEntityHive>(HiveConstants.CACHE_BOX);
       box.put(HiveConstants.CACHED_ITEM, ActivityEntityHive.fromEntity(entity));
     } catch (e) {
-      printError(
+      ErrorHelper().printError(
           "ActivityLocalDataSourceImplementation/saveActivityAsFavorite", e);
       throw UnknownLocalException();
     }
   }
 }
 
-/*
-class ActivityNoCachedException extends ActivityException {
-  ActivityNoCachedException({Exception? exception})
-      : super(exception: exception);
-}
-
-class UnknownLocalException extends ActivityException {
-  UnknownLocalException({Exception? exception}) : super(exception: exception);
-}
-
-class DeletingActivityException extends ActivityException {
-  DeletingActivityException({Exception? exception})
-      : super(exception: exception);
-}
-*/

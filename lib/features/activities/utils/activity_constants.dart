@@ -1,7 +1,15 @@
 import 'activity_types.dart';
 
 class ActivityConstants {
-  static List<ActivityType> allActivityTypes = [
+  ActivityConstants._();
+
+  static final ActivityConstants _ActivityConstantsInstance = ActivityConstants._();
+
+  factory ActivityConstants() {
+    return _ActivityConstantsInstance;
+ }
+
+ List<ActivityType> allActivityTypes = [
     ActivityType.education,
     ActivityType.recreational,
     ActivityType.social,

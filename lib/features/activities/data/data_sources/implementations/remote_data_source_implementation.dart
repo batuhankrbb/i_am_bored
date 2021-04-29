@@ -26,7 +26,7 @@ class ActivityRemoteDataSourceImplementation
         throw DioError(requestOptions: RequestOptions(path: ""));
       }
     } on DioError catch (e) {
-       printError(
+       ErrorHelper().printError(
           "ActivityRemoteDataSourceImplementation/getActivityByType", e);
      throw _handleErrorStatusCode(e.response?.statusCode);
     }
@@ -44,7 +44,7 @@ class ActivityRemoteDataSourceImplementation
         throw DioError(requestOptions: RequestOptions(path: ""));
       }
     } on DioError catch (e) {
-      printError(
+      ErrorHelper().printError(
           "ActivityRemoteDataSourceImplementation/getRandomActivity", e);
      throw _handleErrorStatusCode(e.response?.statusCode);
     }
@@ -64,18 +64,3 @@ class ActivityRemoteDataSourceImplementation
     }
   }
 }
-
-/*
-class UnknownRemoteException extends ActivityException{
-  UnknownRemoteException({Exception? exception}) : super(exception: exception);
-}
-
-class NoInternetException extends ActivityException{
-  NoInternetException({Exception? exception}) : super(exception: exception);
-}
-
-class ForbiddenActivityException extends ActivityException {
-  ForbiddenActivityException({Exception? exception})
-      : super(exception: exception);
-}
-*/

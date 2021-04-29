@@ -8,9 +8,9 @@ import '../../models/activity_model.dart';
 import '../contracts/remote_data_source_contract.dart';
 
 
-//TODO Apply DRY here.
 class ActivityRemoteDataSourceImplementation
     implements ActivityRemoteDataSourceContract {
+      
   var _executer = NetworkExecuter();
 
   @override

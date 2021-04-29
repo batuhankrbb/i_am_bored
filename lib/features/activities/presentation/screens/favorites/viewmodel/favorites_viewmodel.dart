@@ -12,12 +12,12 @@ class FavoritesViewModel = _FavoritesViewModel with _$FavoritesViewModel;
 abstract class _FavoritesViewModel with Store {
   final GetFavoriteActivities getFavoriteActivitiesUseCase;
   final DeleteFavoriteActivity deleteFavoriteActivityUseCase;
-  BuildContext context;
+  late BuildContext context;
 
-  _FavoritesViewModel(
-      {required this.getFavoriteActivitiesUseCase,
-      required this.deleteFavoriteActivityUseCase,
-      required this.context});
+  _FavoritesViewModel({
+    required this.getFavoriteActivitiesUseCase,
+    required this.deleteFavoriteActivityUseCase,
+  });
 
   @observable
   StateResult<List<ActivityEntity>> favoriteActivities = StateResult.initial();
@@ -41,6 +41,10 @@ abstract class _FavoritesViewModel with Store {
     }, failure: (failure) {
       _showAlertDialog(failure.message);
     });
+  }
+
+  void setContext(BuildContext context) {
+    this.context = context;
   }
 
   void _showAlertDialog(String message) {

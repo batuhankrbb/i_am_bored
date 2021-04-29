@@ -26,17 +26,15 @@ void setUpGetIt() {
 }
 
 void _setUpViewModels() {
-  getit.registerSingleton(({required BuildContext context}) => HomeViewModel(
+  getit.registerLazySingleton(() => FavoritesViewModel(
+      getFavoriteActivitiesUseCase: getit(),
+      deleteFavoriteActivityUseCase: getit()));
+
+  getit.registerLazySingleton(() => HomeViewModel(
       getActivityByTypeUseCase: getit(),
       getRandomActivityUseCase: getit(),
       saveActivityAsFavoriteUseCase: getit(),
-      deleteFavoriteActivityUseCase: getit(),
-      context: context));
-  getit.registerSingleton(({required BuildContext context}) =>
-      FavoritesViewModel(
-          getFavoriteActivitiesUseCase: getit(),
-          deleteFavoriteActivityUseCase: getit(),
-          context: context));
+      deleteFavoriteActivityUseCase: getit()));
 }
 
 void _setUpUseCases() {

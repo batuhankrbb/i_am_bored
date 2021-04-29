@@ -8,6 +8,8 @@ import '../../../../utils/activity_types.dart';
 
 part 'home_view_model.g.dart';
 
+//TODO Consider to get BuildContext as a parameter in all methods that do something with context.
+
 class HomeViewModel = _HomeViewModel with _$HomeViewModel;
 
 abstract class _HomeViewModel with Store {
@@ -15,13 +17,13 @@ abstract class _HomeViewModel with Store {
   final GetActivityByType getActivityByTypeUseCase;
   final SaveActivityAsFavorite saveActivityAsFavoriteUseCase;
   final DeleteFavoriteActivity deleteFavoriteActivityUseCase;
-  BuildContext context;
+  late BuildContext context;
 
   _HomeViewModel(
       {required this.getRandomActivityUseCase,
       required this.getActivityByTypeUseCase,
       required this.saveActivityAsFavoriteUseCase,
-      required this.context, required this.deleteFavoriteActivityUseCase});
+      required this.deleteFavoriteActivityUseCase});
 
   @observable
   StateResult<ActivityEntity> activityStateResult = StateResult.initial();
@@ -58,14 +60,19 @@ abstract class _HomeViewModel with Store {
     });
   }
 
-  @action 
-  Future<void> removeActivityFromFavorite(ActivityEntity entity) async{
+  @action
+  Future<void> removeActivityFromFavorite(
+      ActivityEntity entity, BuildContext context) async {
     var result = await deleteFavoriteActivityUseCase.execute(entity.key);
     result.when(success: (_) {
       _showAlertDialog("Activity is removed successfully");
     }, failure: (failure) {
       _showAlertDialog(failure.message);
     });
+  }
+
+  void setContext(BuildContext context) {
+    this.context = context;
   }
 
   void _showAlertDialog(String message) {

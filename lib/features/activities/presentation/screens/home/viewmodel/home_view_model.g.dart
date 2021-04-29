@@ -55,9 +55,10 @@ mixin _$HomeViewModel on _HomeViewModel, Store {
       AsyncAction('_HomeViewModel.removeActivityFromFavorite');
 
   @override
-  Future<void> removeActivityFromFavorite(ActivityEntity entity) {
+  Future<void> removeActivityFromFavorite(
+      ActivityEntity entity, BuildContext context) {
     return _$removeActivityFromFavoriteAsyncAction
-        .run(() => super.removeActivityFromFavorite(entity));
+        .run(() => super.removeActivityFromFavorite(entity, context));
   }
 
   @override

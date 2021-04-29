@@ -8,6 +8,8 @@ import '../exception_handling/exceptions/activity_exceptions.dart';
 import '../exception_handling/handler/activity_exception_handler.dart';
 import '../models/activity_model.dart';
 
+
+//TODO Apply DRY Here
 class ActivityRepositoryImplementation implements ActivityRepositoryContract {
   final ActivityLocalDataSourceContract localDataSourceContract;
   final ActivityRemoteDataSourceContract remoteDataSourceContract;
@@ -23,7 +25,7 @@ class ActivityRepositoryImplementation implements ActivityRepositoryContract {
   @override
   Future<Result<ActivityEntity>> getActivityByType(String type) async {
     try {
-      return _fetchFromNetworkWithNetworkChecking(() {
+      return _fetchFromNetworkWithNetworkCheckingAndCaching(() {
         return remoteDataSourceContract.getActivityByType(type);
       });
     } on ActivityException catch (e) {
@@ -34,7 +36,7 @@ class ActivityRepositoryImplementation implements ActivityRepositoryContract {
   @override
   Future<Result<ActivityEntity>> getRandomActivity() async {
     try {
-      return _fetchFromNetworkWithNetworkChecking(() {
+      return _fetchFromNetworkWithNetworkCheckingAndCaching(() {
         return remoteDataSourceContract.getRandomActivity();
       });
     } on ActivityException catch (e) {
@@ -78,15 +80,32 @@ class ActivityRepositoryImplementation implements ActivityRepositoryContract {
       var cachedActivity = await localDataSourceContract.getCachedActivity();
       return Result.success(cachedActivity);
     } on ActivityException catch (e) {
-       return Result.failure(exceptionHandler.handleException(e));
+      return Result.failure(exceptionHandler.handleException(e));
     }
   }
 
-  Future<Result<ActivityEntity>> _fetchFromNetworkWithNetworkChecking(
+  Future<Result<void>> _cacheActivity(ActivityEntity entity) async {
+    try {
+      var result = localDataSourceContract.cacheActivity(entity);
+      return Result.success(result);
+    } on ActivityException catch (e) {
+      return Result.failure(exceptionHandler.handleException(e));
+    }
+  }
+
+  Future<Result<ActivityEntity>> _fetchFromNetworkWithNetworkCheckingAndCaching(
       Future<ActivityModel> Function() getActivity) async {
     if (await networkCheckerContract.isConnected()) {
       var activity = await getActivity();
-      return Result<ActivityEntity>.success(activity.toEntity());
+      var entity = activity.toEntity();
+      var cacheResult = await _cacheActivity(entity);
+
+      return cacheResult.when(success: (_) {
+        return Result.success(entity);
+      }, failure: (failure) {
+        return Result.failure(failure);
+      });
+
     } else {
       var activity = await _getCachedActivity();
       return activity;

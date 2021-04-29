@@ -6,4 +6,5 @@ abstract class ActivityLocalDataSourceContract {
   Future<ActivityEntity> getCachedActivity();
   Future<void> saveActivityAsFavorite(ActivityEntity entity);
   Future<void> deleteFavoriteActivity(String key);
+  Future<void> cacheActivity(ActivityEntity entity);
 }

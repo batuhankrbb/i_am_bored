@@ -7,7 +7,7 @@ class ActivityExceptionHandler {
       return CustomFailure(message: "Oh! Something went wrong in Local :(");
     } else if (exception is UnknownRemoteException) {
       return CustomFailure(message: "Oh! Something went wrong in Remote :(");
-    } else if (exception is ActivityZeroFavoriteException) {
+    } else if (exception is ActivityNoCachedException) {
       return CustomFailure(
           message:
               "Oh! You have no internet connection and It's your first time.");

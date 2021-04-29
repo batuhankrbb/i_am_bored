@@ -4,13 +4,18 @@ abstract class ActivityException implements Exception {
   ActivityException({this.exception});
 }
 
-class ActivityZeroFavoriteException extends ActivityException {
-  ActivityZeroFavoriteException({Exception? exception})
+class ActivityNoCachedException extends ActivityException {
+  ActivityNoCachedException({Exception? exception})
       : super(exception: exception);
 }
 
 class UnknownLocalException extends ActivityException {
   UnknownLocalException({Exception? exception}) : super(exception: exception);
+}
+
+class DeletingActivityException extends ActivityException {
+  DeletingActivityException({Exception? exception})
+      : super(exception: exception);
 }
 
 class UnknownRemoteException extends ActivityException {
@@ -19,11 +24,6 @@ class UnknownRemoteException extends ActivityException {
 
 class NoInternetException extends ActivityException {
   NoInternetException({Exception? exception}) : super(exception: exception);
-}
-
-class DeletingActivityException extends ActivityException {
-  DeletingActivityException({Exception? exception})
-      : super(exception: exception);
 }
 
 class ForbiddenActivityException extends ActivityException {

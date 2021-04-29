@@ -1,5 +1,6 @@
 import 'package:im_bored_app/core/constants/hive_constants.dart';
 import 'package:im_bored_app/core/result_types/result.dart';
+import 'package:im_bored_app/core/utils/error_printer.dart';
 import 'package:im_bored_app/features/activities/data/data_sources/contracts/local_data_source_contract.dart';
 import 'package:im_bored_app/features/activities/data/exception_handling/exceptions/activity_exceptions.dart';
 import 'package:im_bored_app/features/activities/domain/entities/activity_entity.dart';
@@ -19,6 +20,8 @@ class ActivityLocalDataSourceImplementation
         throw DeletingActivityException();
       }
     } catch (e) {
+      printError(
+          "ActivityLocalDataSourceImplementation/deleteFavoriteActivity", e);
       throw DeletingActivityException();
     }
   }
@@ -30,6 +33,8 @@ class ActivityLocalDataSourceImplementation
       ActivityEntityHive activity = box.get(HiveConstants.CACHED_ITEM)!;
       return activity.toEntity();
     } catch (e) {
+       printError(
+          "ActivityLocalDataSourceImplementation/getCachedActivity", e);
       throw ActivityNoCachedException();
     }
   }
@@ -42,6 +47,8 @@ class ActivityLocalDataSourceImplementation
       var values = box.values.map((e) => e.toEntity()).toList();
       return values;
     } catch (e) {
+      printError(
+          "ActivityLocalDataSourceImplementation/getFavoriteActivities", e);
       throw UnknownLocalException();
     }
   }
@@ -51,8 +58,10 @@ class ActivityLocalDataSourceImplementation
     try {
       var box =
           await Hive.openBox<ActivityEntityHive>(HiveConstants.FAVORITES_BOX);
-        box.put(entity.key, ActivityEntityHive.fromEntity(entity));
+      box.put(entity.key, ActivityEntityHive.fromEntity(entity));
     } catch (e) {
+      printError(
+          "ActivityLocalDataSourceImplementation/saveActivityAsFavorite", e);
       throw UnknownLocalException();
     }
   }
@@ -63,6 +72,8 @@ class ActivityLocalDataSourceImplementation
       var box = await Hive.openBox<ActivityEntityHive>(HiveConstants.CACHE_BOX);
       box.put(HiveConstants.CACHED_ITEM, ActivityEntityHive.fromEntity(entity));
     } catch (e) {
+      printError(
+          "ActivityLocalDataSourceImplementation/saveActivityAsFavorite", e);
       throw UnknownLocalException();
     }
   }

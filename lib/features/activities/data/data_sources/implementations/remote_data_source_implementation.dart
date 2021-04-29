@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:im_bored_app/core/utils/error_printer.dart';
 
 import '../../../../../core/constants/response_types.dart';
 import '../../../../../core/network/network_clients/activity_client.dart';
@@ -10,7 +11,7 @@ import '../contracts/remote_data_source_contract.dart';
 
 class ActivityRemoteDataSourceImplementation
     implements ActivityRemoteDataSourceContract {
-      
+
   var _executer = NetworkExecuter();
 
   @override
@@ -25,6 +26,8 @@ class ActivityRemoteDataSourceImplementation
         throw DioError(requestOptions: RequestOptions(path: ""));
       }
     } on DioError catch (e) {
+       printError(
+          "ActivityRemoteDataSourceImplementation/getActivityByType", e);
      throw _handleErrorStatusCode(e.response?.statusCode);
     }
   }
@@ -41,6 +44,8 @@ class ActivityRemoteDataSourceImplementation
         throw DioError(requestOptions: RequestOptions(path: ""));
       }
     } on DioError catch (e) {
+      printError(
+          "ActivityRemoteDataSourceImplementation/getRandomActivity", e);
      throw _handleErrorStatusCode(e.response?.statusCode);
     }
   }

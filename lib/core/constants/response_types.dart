@@ -1,6 +1,15 @@
 import '../../features/activities/data/models/activity_model.dart';
 
-ActivityModel DEFAULT_ACTIVITY_MODEL = ActivityModel(
+class DefaultResponseTypes {
+  DefaultResponseTypes._();
+
+  static final DefaultResponseTypes _DefaultResponseTypesInstance = DefaultResponseTypes._();
+
+  factory DefaultResponseTypes() {
+    return _DefaultResponseTypesInstance;
+ }
+
+ ActivityModel DEFAULT_ACTIVITY_MODEL = ActivityModel(
     activity: "",
     type: "",
     participants: 0,
@@ -8,3 +17,4 @@ ActivityModel DEFAULT_ACTIVITY_MODEL = ActivityModel(
     link: "",
     key: "",
     accessibility: 0);
+}

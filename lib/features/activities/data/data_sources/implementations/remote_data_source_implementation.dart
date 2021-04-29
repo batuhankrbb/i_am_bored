@@ -18,7 +18,7 @@ class ActivityRemoteDataSourceImplementation
   Future<ActivityModel> getActivityByType(String type) async {
     try {
       var response = await _executer.execute<ActivityModel, ActivityModel>(
-          responseType: DEFAULT_ACTIVITY_MODEL,
+          responseType: DefaultResponseTypes().DEFAULT_ACTIVITY_MODEL,
           options: ActivityClient.activityByType(type));
       if (response != null) {
         return response;
@@ -36,7 +36,7 @@ class ActivityRemoteDataSourceImplementation
   Future<ActivityModel> getRandomActivity() async {
    try {
       var response = await _executer.execute<ActivityModel, ActivityModel>(
-          responseType: DEFAULT_ACTIVITY_MODEL,
+          responseType: DefaultResponseTypes().DEFAULT_ACTIVITY_MODEL,
           options: ActivityClient.activityRandom());
       if (response != null) {
         return response;

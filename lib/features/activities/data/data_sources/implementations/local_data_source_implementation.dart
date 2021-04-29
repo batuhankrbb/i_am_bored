@@ -12,7 +12,7 @@ class ActivityLocalDataSourceImplementation
   @override
   Future<void> deleteFavoriteActivity(String key) async {
     try {
-      var box = await Hive.openBox(HiveConstants.FAVORITES_BOX);
+      var box = await Hive.openBox(HiveConstants().FAVORITES_BOX);
       if (box.get(key) != null) {
         box.delete(key);
       } else {
@@ -28,8 +28,8 @@ class ActivityLocalDataSourceImplementation
   @override
   Future<ActivityEntity> getCachedActivity() async {
     try {
-      var box = await Hive.openBox<ActivityEntityHive>(HiveConstants.CACHE_BOX);
-      ActivityEntityHive activity = box.get(HiveConstants.CACHED_ITEM)!;
+      var box = await Hive.openBox<ActivityEntityHive>(HiveConstants().CACHE_BOX);
+      ActivityEntityHive activity = box.get(HiveConstants().CACHED_ITEM)!;
       return activity.toEntity();
     } catch (e) {
       ErrorHelper().printError(
@@ -42,7 +42,7 @@ class ActivityLocalDataSourceImplementation
   Future<List<ActivityEntity>> getFavoriteActivities() async {
     try {
       var box =
-          await Hive.openBox<ActivityEntityHive>(HiveConstants.FAVORITES_BOX);
+          await Hive.openBox<ActivityEntityHive>(HiveConstants().FAVORITES_BOX);
       var values = box.values.map((e) => e.toEntity()).toList();
       return values;
     } catch (e) {
@@ -56,7 +56,7 @@ class ActivityLocalDataSourceImplementation
   Future<void> saveActivityAsFavorite(ActivityEntity entity) async {
     try {
       var box =
-          await Hive.openBox<ActivityEntityHive>(HiveConstants.FAVORITES_BOX);
+          await Hive.openBox<ActivityEntityHive>(HiveConstants().FAVORITES_BOX);
       box.put(entity.key, ActivityEntityHive.fromEntity(entity));
     } catch (e) {
       ErrorHelper().printError(
@@ -68,8 +68,8 @@ class ActivityLocalDataSourceImplementation
   @override
   Future<void> cacheActivity(ActivityEntity entity) async {
     try {
-      var box = await Hive.openBox<ActivityEntityHive>(HiveConstants.CACHE_BOX);
-      box.put(HiveConstants.CACHED_ITEM, ActivityEntityHive.fromEntity(entity));
+      var box = await Hive.openBox<ActivityEntityHive>(HiveConstants().CACHE_BOX);
+      box.put(HiveConstants().CACHED_ITEM, ActivityEntityHive.fromEntity(entity));
     } catch (e) {
       ErrorHelper().printError(
           "ActivityLocalDataSourceImplementation/saveActivityAsFavorite", e);

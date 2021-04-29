@@ -48,12 +48,9 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   fonts:
-    - family: Coolvetica
+    - family: Helvetica
       fonts:
-        - asset: assets/fonts/coolvetica-compressed-rg.ttf
-        - asset: assets/fonts/coolvetica-condensed-rg.ttf
-        - asset: assets/fonts/coolvetica-crammed-rg.ttf
-        - asset: assets/fonts/coolvetica-rg.ttf
+        - asset: assets/fonts/Helvetica-Bold-Font.ttf
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

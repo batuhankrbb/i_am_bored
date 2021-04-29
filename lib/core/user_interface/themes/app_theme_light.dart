@@ -13,7 +13,16 @@ class AppThemeLight {
     return _AppThemeLightInstance;
   }
 
-  ThemeData get theme => ThemeData.dark().copyWith(
-      colorScheme: ColorScheme.dark()
-          .copyWith(primary: _customColor.white, secondary: _customColor.black));
+    ThemeData get theme => ThemeData.light().copyWith(
+        colorScheme: ColorScheme.light().copyWith(
+          primary: _customColor.black,
+          secondary: _customColor.white,
+        ),
+        backgroundColor: _customColor.black,
+        textTheme: ThemeData.light().textTheme.apply(fontFamily: "Helvetica"),
+        primaryTextTheme:
+            ThemeData.light().textTheme.apply(fontFamily: "Helvetica"),
+        accentTextTheme:
+            ThemeData.light().textTheme.apply(fontFamily: "Helvetica")
+      );
 }

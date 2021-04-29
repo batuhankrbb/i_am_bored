@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
-import 'package:im_bored_app/core/utils/error_printer.dart';
 
 import '../../../../../core/constants/response_types.dart';
 import '../../../../../core/network/network_clients/activity_client.dart';
 import '../../../../../core/network/network_fetching/network_executer.dart';
+import '../../../../../core/utils/error_printer.dart';
 import '../../exception_handling/exceptions/activity_exceptions.dart';
 import '../../models/activity_model.dart';
 import '../contracts/remote_data_source_contract.dart';

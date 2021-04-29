@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/features/activities/utils/activity_types.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../../../../../core/result_types/state_result.dart';

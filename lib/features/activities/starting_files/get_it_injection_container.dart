@@ -1,18 +1,19 @@
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'package:im_bored_app/core/network/network_checking/network_checker_contract.dart';
-import 'package:im_bored_app/core/network/network_checking/network_checker_implementation.dart';
-import 'package:im_bored_app/features/activities/data/data_sources/contracts/local_data_source_contract.dart';
-import 'package:im_bored_app/features/activities/data/data_sources/contracts/remote_data_source_contract.dart';
-import 'package:im_bored_app/features/activities/data/data_sources/implementations/local_data_source_implementation.dart';
-import 'package:im_bored_app/features/activities/data/data_sources/implementations/remote_data_source_implementation.dart';
-import 'package:im_bored_app/features/activities/data/exception_handling/handler/activity_exception_handler.dart';
-import 'package:im_bored_app/features/activities/data/repositories/activity_repository_implementation.dart';
-import 'package:im_bored_app/features/activities/domain/repositories/activity_repository.dart';
-import 'package:im_bored_app/features/activities/domain/usecases/activities_usecases.dart';
-import 'package:im_bored_app/features/activities/presentation/screens/favorites/viewmodel/favorites_viewmodel.dart';
-import 'package:im_bored_app/features/activities/presentation/screens/home/viewmodel/home_view_model.dart';
+
+import '../../../core/network/network_checking/network_checker_contract.dart';
+import '../../../core/network/network_checking/network_checker_implementation.dart';
+import '../data/data_sources/contracts/local_data_source_contract.dart';
+import '../data/data_sources/contracts/remote_data_source_contract.dart';
+import '../data/data_sources/implementations/local_data_source_implementation.dart';
+import '../data/data_sources/implementations/remote_data_source_implementation.dart';
+import '../data/exception_handling/handler/activity_exception_handler.dart';
+import '../data/repositories/activity_repository_implementation.dart';
+import '../domain/repositories/activity_repository.dart';
+import '../domain/usecases/activities_usecases.dart';
+import '../presentation/screens/favorites/viewmodel/favorites_viewmodel.dart';
+import '../presentation/screens/home/viewmodel/home_view_model.dart';
 
 GetIt getit = GetIt.instance;
 

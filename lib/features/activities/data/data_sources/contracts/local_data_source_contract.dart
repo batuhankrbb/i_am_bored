@@ -1,4 +1,3 @@
-import '../../../../../core/result_types/result.dart';
 import '../../../domain/entities/activity_entity.dart';
 
 abstract class ActivityLocalDataSourceContract {

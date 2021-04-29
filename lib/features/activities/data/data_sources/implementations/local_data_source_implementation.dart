@@ -1,12 +1,11 @@
-import 'package:im_bored_app/core/constants/hive_constants.dart';
-import 'package:im_bored_app/core/result_types/result.dart';
-import 'package:im_bored_app/core/utils/error_printer.dart';
-import 'package:im_bored_app/features/activities/data/data_sources/contracts/local_data_source_contract.dart';
-import 'package:im_bored_app/features/activities/data/exception_handling/exceptions/activity_exceptions.dart';
-import 'package:im_bored_app/features/activities/domain/entities/activity_entity.dart';
 import 'package:hive/hive.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:im_bored_app/features/activities/utils/hive/activity_entity_adapter.dart';
+
+import '../../../../../core/constants/hive_constants.dart';
+import '../../../../../core/utils/error_printer.dart';
+import '../../../domain/entities/activity_entity.dart';
+import '../../../utils/hive/activity_entity_adapter.dart';
+import '../../exception_handling/exceptions/activity_exceptions.dart';
+import '../contracts/local_data_source_contract.dart';
 
 class ActivityLocalDataSourceImplementation
     extends ActivityLocalDataSourceContract {

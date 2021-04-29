@@ -1,6 +1,6 @@
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:im_bored_app/features/activities/domain/entities/activity_entity.dart';
+import '../../domain/entities/activity_entity.dart';
 
 part 'activity_entity_adapter.g.dart';
 

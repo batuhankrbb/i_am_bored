@@ -1,5 +1,6 @@
 
 import 'package:dio/dio.dart';
+
 import 'network_option_generator.dart';
 
 class NetworkRequestor {

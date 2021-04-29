@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:im_bored_app/features/activities/data/data_sources/implementations/local_data_source_implementation.dart';
-import 'package:im_bored_app/features/activities/data/exception_handling/exceptions/activity_exceptions.dart';
-import 'package:im_bored_app/features/activities/domain/entities/activity_entity.dart';
-import 'package:im_bored_app/features/activities/utils/hive/activity_entity_adapter.dart';
+
 import 'features/activities/_starting_files/get_it_injection_container.dart';
 import 'features/activities/starting_files/hive_starting_setup.dart';
 

@@ -1,5 +1,4 @@
 import '../../../../core/network/network_fetching/base_network_model.dart';
-
 import '../../domain/entities/activity_entity.dart';
 
 class ActivityModel extends BaseNetworkModel<ActivityModel> {

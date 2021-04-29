@@ -1,5 +1,4 @@
 import 'package:connectivity/connectivity.dart';
-import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../../core/network/network_checking/network_checker_contract.dart';

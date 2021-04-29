@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/core/user_interface/custom_colors.dart';
+
+import '../custom_colors.dart';
 
 class AppThemeDark {
   AppThemeDark._();

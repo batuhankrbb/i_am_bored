@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../custom_colors.dart';
+import '../../constants/custom_colors.dart';
 
 class AppThemeLight {
   AppThemeLight._();

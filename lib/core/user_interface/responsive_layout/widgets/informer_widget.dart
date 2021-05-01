@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/core/user_interface/responsive_layout/utils/responsive_layout_helper.dart';
-import 'package:im_bored_app/core/user_interface/responsive_layout/utils/screen_information_model.dart';
+import '../utils/responsive_layout_helper.dart';
+import '../utils/screen_information_model.dart';
 
 class InformerWidget extends StatelessWidget {
   InformerWidget({Key? key, required this.onPageBuild}) : super(key: key);

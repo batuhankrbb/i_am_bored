@@ -1,8 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/widgets.dart';
-import 'package:im_bored_app/core/user_interface/responsive_layout/utils/device_enums.dart';
-import 'package:im_bored_app/core/user_interface/responsive_layout/utils/screen_information_model.dart';
+
+import 'device_enums.dart';
+import 'screen_information_model.dart';
 
 class ResponsiveLayoutHelper {
   final BuildContext context;

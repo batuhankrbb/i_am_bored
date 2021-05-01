@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/core/user_interface/responsive_layout/utils/device_enums.dart';
-import 'package:im_bored_app/core/user_interface/responsive_layout/utils/responsive_layout_helper.dart';
+import '../utils/device_enums.dart';
+import '../utils/responsive_layout_helper.dart';
 
 class DeterminerWidget extends StatelessWidget {
   Widget portraitMobile;

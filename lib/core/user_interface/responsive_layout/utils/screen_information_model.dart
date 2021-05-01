@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/widgets.dart';
-import 'package:im_bored_app/core/user_interface/responsive_layout/utils/device_enums.dart';
+import 'device_enums.dart';
 
 class ScreenInformation {
   final CustomDeviceType customDeviceType;

@@ -11,4 +11,5 @@ class CustomColor {
 
   Color black = Color(0xFF000000);
   Color white = Color(0xFFFFFFFF);
+  Color brown = Color(0xFF795508);
 }

@@ -18,6 +18,7 @@ class AppThemeLight {
           primary: _customColor.black,
           secondary: _customColor.white,
         ),
+        scaffoldBackgroundColor: _customColor.brown,
         backgroundColor: _customColor.black,
         textTheme: ThemeData.light().textTheme.apply(fontFamily: "Helvetica"),
         primaryTextTheme:

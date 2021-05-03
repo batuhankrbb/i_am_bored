@@ -14,13 +14,24 @@ extension CustomTheme on BuildContext {
 }
 
 extension CustomPadding on BuildContext {
-  double get paddingLevel1 => 2;
-  double get paddingLevel2 => 4;
-  double get paddingLevel3 => 8;
-  double get paddingLevel4 => 12;
-  double get paddingLevel5 => 16;
-  double get paddingLevel6 => 20;
-  double get paddingLevel7 => 24;
-  double get paddingLevel8 => 32;
+  double get padding2 => 2;
+  double get padding4 => 4;
+  double get padding6 => 6;
+  double get padding8 => 8;
+  double get padding10 => 10;
+  double get padding12 => 12;
+  double get padding16 => 16;
+  double get padding20 => 20;
+  double get padding24 => 24;
+  double get padding26 => 26;
+  double get padding30 => 30;
+  double get padding32 => 32;
+  double get padding40 => 40;
+  double get padding64 => 64;
   double customPadding(double padding) => padding;
+}
+
+extension CustomFont on BuildContext {
+  String get coolveticaFont => "Coolvetica";
+  String get helveticaFont => "Helvetica";
 }

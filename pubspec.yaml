@@ -23,7 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  auto_size_text: ^2.1.0
+  auto_size_text: ^3.0.0-nullsafety.0
   build_runner: ^2.0.1
   connectivity: ^3.0.3
   cupertino_icons: ^1.0.2
@@ -53,6 +53,9 @@ flutter:
     - family: Helvetica
       fonts:
         - asset: assets/fonts/Helvetica-Bold-Font.ttf
+    - family: Coolvetica
+      fonts:
+        - asset: assets/fonts/coolvetica-crammed-rg.ttf
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

@@ -19,53 +19,59 @@ class _MainPageState extends BaseState<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomColor().black,
-      body: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Spacer(
-              flex: 15,
-            ),
-            Expanded(
-              flex: 40,
-              child: Padding(
-                padding: EdgeInsets.all(4.0),
-                child: CustomBigText(
-                  text: "So,\nare you\nbored?",
+      body: SafeArea(
+        child: Container(
+          alignment: Alignment.center,
+          padding: EdgeInsets.all(context.padding4),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Spacer(
+                flex: 15,
+              ),
+              Expanded(
+                flex: 40,
+                child: Padding(
+                  padding: EdgeInsets.all(4.0),
+                  child: Container(
+                    color: Colors.green,
+                  ),
                 ),
               ),
-            ),
-            Spacer(
-              flex: 14,
-            ),
-            Expanded(
-              flex: 6,
-              child: CustomBoldTextButton(
-                  text: "I'm sooo bored", onPressed: () {}),
-            ),
-            Spacer(),
-            Expanded(
-              flex: 6,
-              child: CustomTextButton(
-                text: "Nah, I'm not.",
-                onPressed: () {},
+              Spacer(
+                flex: 14,
               ),
-            ),
-            Spacer(
-              flex: 4,
-            ),
-            Expanded(
-              flex: 5,
-              child: CustomBorderedButton(
-                text: "Give me my favorites",
-                onPressed: () {},
+              Expanded(
+                flex: 6,
+                child: CustomBoldTextButton(
+                    text: "I'm sooo bored", onPressed: () {}),
               ),
-            ),
-            Spacer(
-              flex: 6,
-            ),
-          ],
+              Spacer(),
+              Expanded(
+                flex: 6,
+                child: CustomTextButton(
+                  text: "Nah, I'm not.",
+                  onPressed: () {},
+                ),
+              ),
+              Spacer(
+                flex: 4,
+              ),
+              Expanded(
+                flex: 5,
+                child: Padding(
+                  padding: EdgeInsets.all(context.padding2),
+                  child: CustomBorderedButton(
+                    text: "Give me my favorites",
+                    onPressed: () {},
+                  ),
+                ),
+              ),
+              Spacer(
+                flex: 6,
+              ),
+            ],
+          ),
         ),
       ),
     );

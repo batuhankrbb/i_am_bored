@@ -5,14 +5,14 @@ import 'package:im_bored_app/core/user_interface/responsive_layout/utils/device_
 import 'package:im_bored_app/core/user_interface/responsive_layout/widgets/informer_widget.dart';
 
 class CustomTextButton extends StatelessWidget {
-  const CustomTextButton({
-    Key? key,
-    required this.text,
-    required this.onPressed,
-  }) : super(key: key);
+  const CustomTextButton(
+      {Key? key, required this.text, required this.onPressed, this.maxLine = 1, this.textAlign})
+      : super(key: key);
 
   final VoidCallback onPressed;
   final String text;
+  final int maxLine;
+  final TextAlign? textAlign;
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +28,10 @@ class CustomTextButton extends StatelessWidget {
   AutoSizeText buildAutoSizeText(BuildContext context) {
     return AutoSizeText(
       text,
-      style: TextStyle(fontSize: 30, fontFamily: context.coolveticaFont),
-      maxLines: 1,
-      minFontSize: 20,
+      style: TextStyle(fontSize: 40),
+      maxLines: maxLine,
+      textAlign: textAlign,
+      minFontSize: 15,
     );
   }
 }

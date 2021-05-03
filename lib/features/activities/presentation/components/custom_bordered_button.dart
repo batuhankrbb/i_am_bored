@@ -29,17 +29,13 @@ class CustomBorderedButton extends StatelessWidget {
 
   Widget buildAutoSizeText(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(context.padding6),
+      padding: EdgeInsets.all(context.padding4),
       alignment: Alignment.center,
       child: AutoSizeText(
         text,
         maxLines: 1,
-        style: TextStyle(
-            fontSize: 30,
-            fontFamily: context.coolveticaFont,
-            color: context.secondaryColor),
-        wrapWords: false,
-        minFontSize: 10,
+        style: TextStyle(fontSize: 50, color: context.secondaryColor),
+        minFontSize: 12,
       ),
     );
   }

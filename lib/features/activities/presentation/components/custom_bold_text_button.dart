@@ -24,19 +24,22 @@ class CustomBoldTextButton extends StatelessWidget {
           width: info.screenSize.width * (widthRatio ?? 0.8),
           child: BoldButton(
             onPressed: onPressed,
-            child: buildAutoSizeText(),
+            child: buildAutoSizeText(context),
           ),
         );
       },
     );
   }
 
-  AutoSizeText buildAutoSizeText() {
-    return AutoSizeText(
-      text,
-      style: TextStyle(color: CustomColor().black, fontSize: 28),
-      maxLines: 1,
-      minFontSize: 20,
+  Widget buildAutoSizeText(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(context.padding4),
+      child: AutoSizeText(
+        text,
+        style: TextStyle(color: CustomColor().black, fontSize: 50),
+        maxLines: 1,
+        minFontSize: 20,
+      ),
     );
   }
 }

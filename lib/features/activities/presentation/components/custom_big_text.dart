@@ -3,17 +3,29 @@ import 'package:flutter/material.dart';
 import 'package:im_bored_app/core/user_interface/extensions/context_extension.dart';
 
 class CustomBigText extends StatelessWidget {
-  const CustomBigText({Key? key, required this.text}) : super(key: key);
+  const CustomBigText({Key? key, required this.texts}) : super(key: key);
 
-  final String text;
+  final List<String> texts;
 
   @override
   Widget build(BuildContext context) {
-    return AutoSizeText(
-      text,
-      style: TextStyle(color: context.secondaryColor, fontSize: 300),
-      minFontSize: 25,
-      wrapWords: false,
+    return ListView.builder(
+      itemBuilder: (context, index) {
+        return AutoSizeText(
+          texts[index],
+          style: TextStyle(
+            color: context.secondaryColor,
+            fontSize: 35,
+          ),
+          minFontSize: 25,
+        );
+      },
+      itemCount: texts.length,
+      physics: NeverScrollableScrollPhysics(),
     );
   }
 }
+
+/*
+
+*/

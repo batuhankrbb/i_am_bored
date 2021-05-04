@@ -1,5 +1,8 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:im_bored_app/features/activities/presentation/screens/favorites/page/favorite_activities_page.dart';
+import 'package:im_bored_app/features/activities/presentation/screens/favorites/page/favorites_detail_page.dart';
+import 'package:im_bored_app/features/activities/presentation/screens/home/page/main_page.dart';
 
 import 'core/user_interface/themes/app_theme_dark.dart';
 import 'features/activities/presentation/screens/home/page/choose_type_page.dart';
@@ -22,7 +25,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "You can't be bored!",
       theme: AppThemeDark().theme,
-      home: ChooseTypePage(),
+      home: ActivityFavoriteDetailPage(),
     );
   }
 }

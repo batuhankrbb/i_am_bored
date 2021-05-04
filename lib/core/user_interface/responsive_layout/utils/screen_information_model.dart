@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/widgets.dart';
+
 import 'device_enums.dart';
 
 class ScreenInformation {

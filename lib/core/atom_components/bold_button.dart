@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/core/user_interface/responsive_layout/widgets/informer_widget.dart';
-import 'package:im_bored_app/core/user_interface/extensions/context_extension.dart';
+
+import '../user_interface/extensions/context_extension.dart';
+import '../user_interface/responsive_layout/widgets/informer_widget.dart';
 
 class BoldButton extends StatelessWidget {
   final VoidCallback onPressed;

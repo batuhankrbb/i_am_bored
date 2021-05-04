@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/core/user_interface/responsive_layout/widgets/informer_widget.dart';
 
+import '../../../../../core/user_interface/responsive_layout/widgets/informer_widget.dart';
 import 'custom_text.dart';
 
 class BoundedAutoSizeText extends StatelessWidget {

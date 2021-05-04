@@ -5,18 +5,21 @@ import 'package:im_bored_app/core/user_interface/responsive_layout/widgets/infor
 
 class CustomBorderedButton extends StatelessWidget {
   const CustomBorderedButton(
-      {Key? key, required this.text, required this.onPressed, this.widthRatio})
+      {Key? key,
+      required this.text,
+      required this.onPressed,
+      this.widthRatio = 0.75})
       : super(key: key);
 
   final String text;
   final VoidCallback onPressed;
-  final double? widthRatio;
+  final double widthRatio;
 
   @override
   Widget build(BuildContext context) {
     return InformerWidget(onPageBuild: (context, info) {
       return Container(
-        width: info.screenSize.width * (widthRatio ?? 0.8),
+        width: info.screenSize.width * widthRatio,
         height: info.screenSize.height * 0.04,
         decoration: BoxDecoration(
           border: Border.all(color: context.secondaryColor, width: 2),
@@ -29,13 +32,13 @@ class CustomBorderedButton extends StatelessWidget {
 
   Widget buildAutoSizeText(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(context.padding4),
+      padding: EdgeInsets.all(context.padding8),
       alignment: Alignment.center,
       child: AutoSizeText(
         text,
         maxLines: 1,
         style: TextStyle(fontSize: 50, color: context.secondaryColor),
-        minFontSize: 12,
+        minFontSize: 10,
       ),
     );
   }

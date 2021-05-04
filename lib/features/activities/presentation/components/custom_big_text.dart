@@ -15,7 +15,7 @@ class CustomBigText extends StatelessWidget {
           texts[index],
           style: TextStyle(
             color: context.secondaryColor,
-            fontSize: 35,
+            fontSize: 100,
           ),
           minFontSize: 25,
         );

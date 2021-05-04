@@ -33,9 +33,7 @@ class _MainPageState extends BaseState<MainPage> {
                 flex: 40,
                 child: Padding(
                   padding: EdgeInsets.all(4.0),
-                  child: Container(
-                    color: Colors.green,
-                  ),
+                  child: CustomBigText(texts: ["So,","are you","bored"])
                 ),
               ),
               Spacer(

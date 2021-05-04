@@ -42,7 +42,7 @@ class _ActivityDetailPageState extends State<ActivityDetailPage> {
                 flex: 1,
               ),
               Expanded(
-                flex: 6,
+                flex: 7,
                 child: CustomBorderedButton(
                     text: "I like it. Add to my favorites", onPressed: () {}),
               ),

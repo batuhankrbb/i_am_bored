@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:im_bored_app/core/atom_components/bold_button.dart';
-import 'package:im_bored_app/features/activities/presentation/components/custom_big_text.dart';
-import 'package:im_bored_app/features/activities/presentation/components/custom_bold_text_button.dart';
-import 'package:im_bored_app/features/activities/presentation/components/custom_bordered_button.dart';
-import 'package:im_bored_app/features/activities/presentation/components/custom_text_button.dart';
 import 'package:im_bored_app/core/user_interface/extensions/context_extension.dart';
+import 'package:im_bored_app/features/activities/presentation/components/molecules/custom_big_text.dart';
+import 'package:im_bored_app/features/activities/presentation/components/molecules/custom_bold_text_button.dart';
+import 'package:im_bored_app/features/activities/presentation/components/molecules/custom_bordered_button.dart';
+import 'package:im_bored_app/features/activities/presentation/components/molecules/custom_text_button.dart';
 import '../../../../../../core/base/base_state.dart';
 import '../../../../../../core/constants/custom_colors.dart';
 
@@ -32,9 +32,8 @@ class _MainPageState extends BaseState<MainPage> {
               Expanded(
                 flex: 40,
                 child: Padding(
-                  padding: EdgeInsets.all(4.0),
-                  child: CustomBigText(texts: ["So,","are you","bored"])
-                ),
+                    padding: EdgeInsets.all(4.0),
+                    child: CustomBigText(texts: ["So,", "are you", "bored"])),
               ),
               Spacer(
                 flex: 14,

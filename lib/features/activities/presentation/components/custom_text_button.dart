@@ -6,7 +6,11 @@ import '../../../../core/user_interface/responsive_layout/widgets/informer_widge
 
 class CustomTextButton extends StatelessWidget {
   const CustomTextButton(
-      {Key? key, required this.text, required this.onPressed, this.maxLine = 1, this.textAlign})
+      {Key? key,
+      required this.text,
+      required this.onPressed,
+      this.maxLine = 1,
+      this.textAlign})
       : super(key: key);
 
   final VoidCallback onPressed;
@@ -28,7 +32,7 @@ class CustomTextButton extends StatelessWidget {
   AutoSizeText buildAutoSizeText(BuildContext context) {
     return AutoSizeText(
       text,
-      style: TextStyle(fontSize: 40),
+      style: TextStyle(fontSize: 55),
       maxLines: maxLine,
       textAlign: textAlign,
       minFontSize: 15,

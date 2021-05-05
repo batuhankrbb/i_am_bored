@@ -1,5 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:im_bored_app/core/user_interface/responsive_layout/utils/device_enums.dart';
+import 'package:im_bored_app/core/user_interface/responsive_layout/utils/screen_information_model.dart';
+import 'package:im_bored_app/core/user_interface/responsive_layout/widgets/informer_widget.dart';
+import 'package:im_bored_app/features/activities/presentation/components/custom_big_text.dart';
 import '../../../../../../../core/user_interface/extensions/context_extension.dart';
 import '../../../../components/custom_text.dart';
 
@@ -21,19 +25,17 @@ class _IAmNotBoredPageState extends State<IAmNotBoredPage> {
           child: Column(
             children: [
               Spacer(
-                flex: 10,
+                flex: 7,
               ),
               Expanded(
-                flex: 45,
-                child: Container(
-                  color: Colors.green,
-                ),
+                flex: 50,
+                child: buildBigText(context),
               ),
               Spacer(
                 flex: 7,
               ),
               Expanded(
-                flex: 30,
+                flex: 25,
                 child: buildMiddleTextWithBorder(),
               ),
               Spacer(
@@ -53,32 +55,40 @@ class _IAmNotBoredPageState extends State<IAmNotBoredPage> {
     );
   }
 
+  Container buildBigText(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(context.padding12),
+      child: CustomBigText(texts: ["Yey!", "that is", "great news"]),
+    );
+  }
+
   CustomAutoSizeText buildBottomText(BuildContext context) {
     return CustomAutoSizeText(
-      text: "I'm sad to see that you are going :(",
-      fontFamily: context.coolveticaFont,
+      text: "Please don't delete me :( I love you.",
       padding: context.padding8,
     );
   }
 
   Widget buildMiddleTextWithBorder() {
-    return Padding(
-      padding: EdgeInsets.all(context.padding8),
-      child: Container(
-        alignment: Alignment.center,
-        decoration: buildBoxDecoration(),
-        child: CustomAutoSizeText(
-          text:
-              "You've already found something to enjoy. I appreciate you. So, there is no need to use this application anymore. See you when you are bored.",
-          maxLines: null,
-          padding: context.padding12,
-          fontFamily: context.coolveticaFont,
+    return InformerWidget(onPageBuild: (context, info) {
+      return Padding(
+        padding: EdgeInsets.all(context.padding2),
+        child: Container(
+          alignment: Alignment.center,
+          padding: EdgeInsets.all(context.padding4),
+          decoration: buildBoxDecoration(info),
+          child: CustomAutoSizeText(
+            text:
+                "You've already found something to enjoy. I appreciate you. So, there is no need to use this application anymore. See you when you are bored buddy!",
+            maxLines: null,
+            padding: context.padding8,
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 
-  BoxDecoration buildBoxDecoration() {
+  BoxDecoration buildBoxDecoration(ScreenInformation info) {
     return BoxDecoration(
         border: Border.all(width: 2, color: context.secondaryColor),
         borderRadius: BorderRadius.circular(12));

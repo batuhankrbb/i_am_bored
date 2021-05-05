@@ -1,7 +1,5 @@
 import 'package:connectivity/connectivity.dart';
 import 'package:get_it/get_it.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/favorites/viewmodel/favorites_viewmodel.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/home/viewmodel/home_view_model.dart';
 
 import '../../../core/network/network_checking/network_checker_contract.dart';
 import '../../../core/network/network_checking/network_checker_implementation.dart';
@@ -13,6 +11,8 @@ import '../data/exception_handling/handler/activity_exception_handler.dart';
 import '../data/repositories/activity_repository_implementation.dart';
 import '../domain/repositories/activity_repository.dart';
 import '../domain/usecases/activities_usecases.dart';
+import '../presentation/sections/favorites/viewmodel/favorites_viewmodel.dart';
+import '../presentation/sections/home/viewmodel/home_view_model.dart';
 
 GetIt getit = GetIt.instance;
 

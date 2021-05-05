@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../../../../../core/user_interface/responsive_layout/widgets/informer_widget.dart';
-import 'custom_text.dart';
+import '../../../../../../../../core/user_interface/responsive_layout/widgets/informer_widget.dart';
+import '../../../../../components/custom_text.dart';
 
 class BoundedAutoSizeText extends StatelessWidget {
   const BoundedAutoSizeText({Key? key, required this.text, this.widthRatio = 0.6, this.heightRatio = 0.6}) : super(key: key);

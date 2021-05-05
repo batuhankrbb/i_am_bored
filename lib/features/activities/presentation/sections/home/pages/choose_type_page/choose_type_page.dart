@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/features/activities/utils/activity_types.dart';
+import '../../../../../utils/activity_types.dart';
 
 import 'components/text_list_wheel_view.dart';
 

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/core/base/base_state.dart';
-import 'package:im_bored_app/core/user_interface/extensions/context_extension.dart';
-import 'package:im_bored_app/features/activities/presentation/components/molecules/custom_big_text.dart';
-import 'package:im_bored_app/features/activities/presentation/components/molecules/custom_bold_text_button.dart';
-import 'package:im_bored_app/features/activities/presentation/components/molecules/custom_bordered_button.dart';
-import 'package:im_bored_app/features/activities/presentation/components/molecules/custom_text_button.dart';
+import '../../../../../../../core/base/base_state.dart';
+import '../../../../../../../core/user_interface/extensions/context_extension.dart';
+import '../../../../components/custom_big_text.dart';
+import '../../../../components/custom_bold_text_button.dart';
+import '../../../../components/custom_bordered_button.dart';
+import '../../../../components/custom_text_button.dart';
 
 
 class HomePage extends StatefulWidget {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/core/user_interface/responsive_layout/utils/device_enums.dart';
-import 'package:im_bored_app/core/user_interface/responsive_layout/widgets/informer_widget.dart';
-import 'package:im_bored_app/features/activities/presentation/components/molecules/custom_text.dart';
-import 'package:im_bored_app/core/user_interface/extensions/context_extension.dart';
+import '../../../../../../../../core/user_interface/responsive_layout/utils/device_enums.dart';
+import '../../../../../../../../core/user_interface/responsive_layout/widgets/informer_widget.dart';
+import '../../../../../../../../core/user_interface/extensions/context_extension.dart';
+import '../../../../../components/custom_text.dart';
 
 class FavoriteActivityListCell extends StatelessWidget {
   const FavoriteActivityListCell({Key? key, required this.text})

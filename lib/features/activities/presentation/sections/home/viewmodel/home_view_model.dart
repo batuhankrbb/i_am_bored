@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/core/result_types/state_result.dart';
-import 'package:im_bored_app/features/activities/domain/entities/activity_entity.dart';
-import 'package:im_bored_app/features/activities/domain/usecases/activities_usecases.dart';
-import 'package:im_bored_app/features/activities/utils/activity_types.dart';
+import '../../../../../../core/result_types/state_result.dart';
+import '../../../../domain/entities/activity_entity.dart';
+import '../../../../domain/usecases/activities_usecases.dart';
+import '../../../../utils/activity_types.dart';
 import 'package:mobx/mobx.dart';
 
 part 'home_view_model.g.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/features/activities/presentation/components/molecules/custom_text.dart';
-import 'package:im_bored_app/core/user_interface/extensions/context_extension.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/favorites/pages/favorite_activities_page/components/favorite_activity_list_cell.dart';
+import '../../../../components/custom_text.dart';
+import '../../../../../../../core/user_interface/extensions/context_extension.dart';
+import 'components/favorite_activity_list_cell.dart';
 
 class FavoriteActivitiesPage extends StatefulWidget {
   FavoriteActivitiesPage({Key? key}) : super(key: key);

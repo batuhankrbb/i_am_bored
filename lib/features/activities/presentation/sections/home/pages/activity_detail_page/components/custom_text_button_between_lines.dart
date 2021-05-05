@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/user_interface/extensions/context_extension.dart';
-import '../../../../../core/user_interface/responsive_layout/widgets/informer_widget.dart';
-import 'custom_text.dart';
+import '../../../../../../../../core/user_interface/extensions/context_extension.dart';
+import '../../../../../../../../core/user_interface/responsive_layout/widgets/informer_widget.dart';
+import '../../../../../components/custom_text.dart';
 
 class CustomTextButtonBetweenLines extends StatelessWidget {
   const CustomTextButtonBetweenLines(

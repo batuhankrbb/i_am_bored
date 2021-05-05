@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/features/activities/presentation/components/molecules/custom_bold_text_button.dart';
-import 'package:im_bored_app/features/activities/presentation/components/molecules/custom_text.dart';
-import 'package:im_bored_app/core/user_interface/extensions/context_extension.dart';
+import '../../../../components/custom_bold_text_button.dart';
+import '../../../../components/custom_text.dart';
+import '../../../../../../../core/user_interface/extensions/context_extension.dart';
 
 class ActivityFavoriteDetailPage extends StatefulWidget {
   ActivityFavoriteDetailPage({Key? key}) : super(key: key);

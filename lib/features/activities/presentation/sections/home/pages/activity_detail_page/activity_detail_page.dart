@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-
-import '../../../../../../core/user_interface/extensions/context_extension.dart';
-import '../../../components/molecules/custom_bold_text_button.dart';
-import '../../../components/molecules/custom_bordered_button.dart';
-import '../../../components/molecules/custom_text.dart';
-import '../../../components/molecules/custom_text_button.dart';
-import '../../../components/molecules/custom_text_button_between_lines.dart';
-
+import 'package:im_bored_app/features/activities/presentation/components/molecules/custom_bold_text_button.dart';
+import 'package:im_bored_app/features/activities/presentation/components/molecules/custom_bordered_button.dart';
+import 'package:im_bored_app/features/activities/presentation/components/molecules/custom_text.dart';
+import 'package:im_bored_app/features/activities/presentation/components/molecules/custom_text_button.dart';
+import 'package:im_bored_app/core/user_interface/extensions/context_extension.dart';
+import 'package:im_bored_app/features/activities/presentation/components/molecules/custom_text_button_between_lines.dart';
 
 class ActivityDetailPage extends StatefulWidget {
   ActivityDetailPage({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/user_interface/responsive_layout/widgets/informer_widget.dart';
-import '../molecules/bounded_auto_size_text.dart';
+import '../../../../../../../../core/user_interface/responsive_layout/widgets/informer_widget.dart';
+import '../../../../../components/molecules/bounded_auto_size_text.dart';
 
 class TextListWheelView extends StatelessWidget {
 

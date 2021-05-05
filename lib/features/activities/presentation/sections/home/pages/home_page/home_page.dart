@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:im_bored_app/core/base/base_state.dart';
+import 'package:im_bored_app/core/user_interface/extensions/context_extension.dart';
+import 'package:im_bored_app/features/activities/presentation/components/molecules/custom_big_text.dart';
+import 'package:im_bored_app/features/activities/presentation/components/molecules/custom_bold_text_button.dart';
+import 'package:im_bored_app/features/activities/presentation/components/molecules/custom_bordered_button.dart';
+import 'package:im_bored_app/features/activities/presentation/components/molecules/custom_text_button.dart';
 
-import '../../../../../../core/base/base_state.dart';
-import '../../../../../../core/user_interface/extensions/context_extension.dart';
-import '../../../components/molecules/custom_big_text.dart';
-import '../../../components/molecules/custom_bold_text_button.dart';
-import '../../../components/molecules/custom_bordered_button.dart';
-import '../../../components/molecules/custom_text_button.dart';
 
-class MainPage extends StatefulWidget {
-  MainPage({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  HomePage({Key? key}) : super(key: key);
 
   @override
   _MainPageState createState() => _MainPageState();
 }
 
-class _MainPageState extends BaseState<MainPage> {
+class _MainPageState extends BaseState<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +22,7 @@ class _MainPageState extends BaseState<MainPage> {
         child: Container(
           alignment: Alignment.center,
           padding: EdgeInsets.all(context.padding4),
-          child: Column(
+        child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Spacer(

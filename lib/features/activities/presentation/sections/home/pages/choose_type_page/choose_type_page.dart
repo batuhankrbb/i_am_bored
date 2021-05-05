@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:im_bored_app/features/activities/utils/activity_types.dart';
 
-import '../../../../utils/activity_types.dart';
-import '../../../components/organisms/text_list_wheel_view.dart';
+import 'components/text_list_wheel_view.dart';
+
+
 
 class ChooseTypePage extends StatefulWidget {
   ChooseTypePage({Key? key}) : super(key: key);

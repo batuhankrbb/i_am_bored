@@ -5,7 +5,6 @@ import '../../../../components/custom_text.dart';
 import '../../../../components/custom_text_button.dart';
 import '../../../../../../../core/user_interface/extensions/context_extension.dart';
 
-
 import 'components/custom_text_button_between_lines.dart';
 
 class ActivityDetailPage extends StatefulWidget {
@@ -29,22 +28,21 @@ class _ActivityDetailPageState extends State<ActivityDetailPage> {
               ),
               Expanded(
                 flex: 40,
-                child: buildCustomActivityBigText(),
+                child: buildCustomActivityText(),
               ),
               Spacer(
                 flex: 6,
               ),
               Expanded(
-                flex: 22,
+                flex: 26,
                 child: buildActivityInfoTexts(context),
               ),
               Spacer(
-                flex: 1,
+                flex: 3,
               ),
               Expanded(
-                flex: 7,
-                child: CustomBorderedButton(
-                    text: "I like it. Add to my favorites", onPressed: () {}),
+                flex: 8,
+                child: buildAddToFavoriteButton(),
               ),
               Spacer(
                 flex: 12,
@@ -54,16 +52,11 @@ class _ActivityDetailPageState extends State<ActivityDetailPage> {
                 child: buildButtons(context),
               ),
               Spacer(
-                flex: 5,
+                flex: 7,
               ),
               Expanded(
                 flex: 7,
-                child: CustomTextButtonBetweenLines(
-                  text: "current type: relaxation",
-                  onPressed: () {
-                    print("clickeddd");
-                  },
-                ),
+                child: buildCurrentTypeButton(),
               ),
               Spacer(
                 flex: 3,
@@ -72,6 +65,15 @@ class _ActivityDetailPageState extends State<ActivityDetailPage> {
           ),
         ),
       ),
+    );
+  }
+
+  CustomTextButtonBetweenLines buildCurrentTypeButton() {
+    return CustomTextButtonBetweenLines(
+      text: "current type: relaxation",
+      onPressed: () {
+        print("clickeddd");
+      },
     );
   }
 
@@ -85,7 +87,9 @@ class _ActivityDetailPageState extends State<ActivityDetailPage> {
             onPressed: () {},
           ),
         ),
-        Spacer(),
+        Spacer(
+          flex: 2,
+        ),
         Expanded(
           flex: 7,
           child: buildCustomTextButton(),
@@ -107,38 +111,51 @@ class _ActivityDetailPageState extends State<ActivityDetailPage> {
 
   Padding buildActivityInfoTexts(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(context.padding16),
+      padding: EdgeInsets.all(context.padding6),
       child: Column(
         children: [
+          Spacer(),
           Expanded(
+            flex: 2,
             child: CustomAutoSizeText(
               text: "You need 1+ person to do it",
             ),
           ),
           Spacer(),
           Expanded(
+            flex: 2,
             child: CustomAutoSizeText(
               text: "The type of this activity is relaxationasdsadsadas",
             ),
           ),
           Spacer(),
           Expanded(
+            flex: 2,
             child: CustomAutoSizeText(
               text: "This activity is more expensive than %25 activities",
               maxLines: 2,
               textAlign: TextAlign.center,
             ),
           ),
+          Spacer(),
         ],
       ),
     );
   }
 
-  CustomAutoSizeText buildCustomActivityBigText() {
-    return CustomAutoSizeText(
-      text: "Create a cookbok asdadsadasdsad asdasdas adsdasd bbbb fff ",
-      fontSize: 44,
-      maxLines: null,
+  Widget buildCustomActivityText() {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: context.padding6),
+      child: CustomAutoSizeText(
+        text: "Create a cookbok asdfas fads fdasf hello test",
+        fontSize: 100,
+        maxLines: null,
+      ),
     );
+  }
+
+  Widget buildAddToFavoriteButton() {
+    return CustomBorderedButton(
+        text: "I like it. Add to my favorites", onPressed: () {});
   }
 }

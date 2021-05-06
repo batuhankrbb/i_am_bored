@@ -6,9 +6,11 @@ import 'package:im_bored_app/core/user_interface/responsive_layout/widgets/infor
 import '../../../../core/user_interface/extensions/context_extension.dart';
 
 class CustomBigText extends StatelessWidget {
-  const CustomBigText({Key? key, required this.texts}) : super(key: key);
+  const CustomBigText({Key? key, required this.texts, this.alignment})
+      : super(key: key);
 
   final List<String> texts;
+  final Alignment? alignment;
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +30,7 @@ class CustomBigText extends StatelessWidget {
           texts: texts,
           info: info,
           index: index,
+          alignment: alignment,
         );
       },
       itemCount: texts.length,
@@ -38,17 +41,22 @@ class CustomBigText extends StatelessWidget {
 
 class BoundedBigTextContainer extends StatelessWidget {
   const BoundedBigTextContainer(
-      {Key? key, required this.texts, required this.info, required this.index})
+      {Key? key,
+      required this.texts,
+      required this.info,
+      required this.index,
+      this.alignment})
       : super(key: key);
 
   final List<String> texts;
   final ScreenInformation info;
   final int index;
+  final Alignment? alignment;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.centerLeft,
+      alignment: alignment ?? Alignment.centerLeft,
       height: info.boundsSize.height / texts.length,
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: context.padding2),

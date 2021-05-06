@@ -25,31 +25,35 @@ class CustomTextButtonBetweenLines extends StatelessWidget {
             onTap: onPressed,
             child: Container(
               width: info.screenSize.width * widthRatio,
-              child: Column(
-                children: [
-                  Expanded(
-                    flex: 10,
-                    child: Container(
-                      color: context.secondaryColor,
-                    ),
-                  ),
-                  Expanded(
-                    flex: 80,
-                    child: buildAutoSizeText(context),
-                  ),
-                  Expanded(
-                    flex: 10,
-                    child: Container(
-                      color: context.secondaryColor,
-                    ),
-                  ),
-                ],
-              ),
+              child: buildColumn(context),
             ),
           );
         },
       ),
     );
+  }
+
+  Column buildColumn(BuildContext context) {
+    return Column(
+              children: [
+                Expanded(
+                  flex: 10,
+                  child: Container(
+                    color: context.secondaryColor,
+                  ),
+                ),
+                Expanded(
+                  flex: 80,
+                  child: buildAutoSizeText(context),
+                ),
+                Expanded(
+                  flex: 10,
+                  child: Container(
+                    color: context.secondaryColor,
+                  ),
+                ),
+              ],
+            );
   }
 
   Center buildAutoSizeText(BuildContext context) {

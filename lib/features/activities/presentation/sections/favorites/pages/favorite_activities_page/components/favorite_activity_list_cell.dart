@@ -3,6 +3,7 @@ import '../../../../../../../../core/user_interface/responsive_layout/utils/devi
 import '../../../../../../../../core/user_interface/responsive_layout/widgets/informer_widget.dart';
 import '../../../../../../../../core/user_interface/extensions/context_extension.dart';
 import '../../../../../components/custom_text.dart';
+import 'package:im_bored_app/core/user_interface/responsive_layout/utils/screen_information_model.dart';
 
 class FavoriteActivityListCell extends StatelessWidget {
   const FavoriteActivityListCell({Key? key, required this.text})
@@ -23,37 +24,21 @@ class FavoriteActivityListCell extends StatelessWidget {
             ),
             Expanded(
               flex: 1,
-              child: Container(
-                height: info.screenSize.height * 0.08,
-                color: context.secondaryColor,
-              ),
+              child: buildWhiteVerticalLine(info, context),
             ),
             Spacer(
               flex: 2,
             ),
             Expanded(
               flex: 70,
-              child: Padding(
-                padding: EdgeInsets.symmetric(vertical: context.padding6),
-                child: CustomAutoSizeText(
-                  text: text,
-                  maxLines: 3,
-                ),
-              ),
+              child: buildText(context),
             ),
             Spacer(
-              flex: 6,
+              flex: 2,
             ),
             Expanded(
-              flex: 14,
-              child: Center(
-                child: Icon(
-                  Icons.chevron_right_rounded,
-                  size: info.customDeviceType == CustomDeviceType.mobile
-                      ? 50
-                      : 80,
-                ),
-              ),
+              flex: 8,
+              child: buildIcon(info),
             ),
             Spacer(
               flex: 3,
@@ -62,5 +47,34 @@ class FavoriteActivityListCell extends StatelessWidget {
         ),
       );
     });
+  }
+
+  Widget buildIcon(ScreenInformation info) {
+    return InformerWidget(onPageBuild: (context, info) {
+      return Container(
+        alignment: Alignment.center,
+        child: Icon(
+          Icons.chevron_right_rounded,
+          size: info.boundsSize.height * 0.6,
+        ),
+      );
+    });
+  }
+
+  Widget buildText(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: context.padding6),
+      child: CustomAutoSizeText(
+        text: text,
+        maxLines: 4,
+      ),
+    );
+  }
+
+  Container buildWhiteVerticalLine(
+      ScreenInformation info, BuildContext context) {
+    return Container(
+      color: context.secondaryColor,
+    );
   }
 }

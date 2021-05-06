@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:im_bored_app/features/activities/presentation/components/custom_big_text.dart';
 import '../../../../components/custom_text.dart';
 import '../../../../../../../core/user_interface/extensions/context_extension.dart';
 import 'components/favorite_activity_list_cell.dart';
@@ -22,29 +23,41 @@ class _FavoriteActivitiesPageState extends State<FavoriteActivitiesPage> {
             ),
             Expanded(
               flex: 40,
-              child: CustomAutoSizeText(
-                  text: "Create a cookbook asdsafsaa asdasdas bb fffffasdsa"),
+              child: buildBigText(),
             ),
             Spacer(
               flex: 6,
             ),
             Expanded(
-              flex: 54, //54
-              child: ListView.builder(
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: EdgeInsets.symmetric(vertical: context.padding6),
-                    child: FavoriteActivityListCell(
-                        text:
-                            "Create a cookbook with your favorite receipesasdfsafadsfasdfsddfsafsadfsxx"),
-                  );
-                },
-                itemCount: 10,
-                physics: BouncingScrollPhysics(),
-              ),
+              flex: 54,
+              child: buildListView(),
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  ListView buildListView() {
+    return ListView.builder(
+      itemBuilder: (context, index) {
+        return Container(
+          margin: EdgeInsets.symmetric(vertical: context.padding16),
+          child: FavoriteActivityListCell(
+            text: "Create a cookbook with your favorite",
+          ),
+        );
+      },
+      itemCount: 10,
+      physics: BouncingScrollPhysics(),
+    );
+  }
+
+  Widget buildBigText() {
+    return Container(
+      padding: EdgeInsets.only(left: context.padding12),
+      child: CustomBigText(
+        texts: ["Wow,", "you have", "impeccable", "taste"],
       ),
     );
   }

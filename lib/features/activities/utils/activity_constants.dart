@@ -20,4 +20,5 @@ class ActivityConstants {
     ActivityType.music,
     ActivityType.busywork
   ];
+
 }

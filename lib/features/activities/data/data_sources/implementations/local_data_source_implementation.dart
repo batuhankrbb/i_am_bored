@@ -1,9 +1,10 @@
 import 'package:hive/hive.dart';
+import 'package:im_bored_app/features/activities/data/data_sources/external_related/hive/activity_entity_adapter.dart';
 
 import '../../../../../core/constants/hive_constants.dart';
 import '../../../../../core/utils/error_printer.dart';
 import '../../../domain/entities/activity_entity.dart';
-import '../../../utils/hive/activity_entity_adapter.dart';
+
 import '../../exception_handling/exceptions/activity_exceptions.dart';
 import '../contracts/local_data_source_contract.dart';
 

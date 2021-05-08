@@ -30,7 +30,7 @@ extension RawValue on ActivityType {
       case ActivityType.relaxation:
         return "relaxation";
       case ActivityType.music:
-        return "mudic";
+        return "music";
       case ActivityType.busywork:
         return "busywork";
       default:

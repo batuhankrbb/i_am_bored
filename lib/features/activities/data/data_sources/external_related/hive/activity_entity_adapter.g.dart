@@ -22,13 +22,14 @@ class ActivityEntityHiveAdapter extends TypeAdapter<ActivityEntityHive> {
       accessibility: fields[2] as num,
       key: fields[3] as String,
       price: fields[4] as String,
+      participants: fields[5] as int,
     );
   }
 
   @override
   void write(BinaryWriter writer, ActivityEntityHive obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.activity)
       ..writeByte(1)
@@ -38,7 +39,9 @@ class ActivityEntityHiveAdapter extends TypeAdapter<ActivityEntityHive> {
       ..writeByte(3)
       ..write(obj.key)
       ..writeByte(4)
-      ..write(obj.price);
+      ..write(obj.price)
+      ..writeByte(5)
+      ..write(obj.participants);
   }
 
   @override

@@ -20,12 +20,16 @@ class ActivityEntityHive {
   @HiveField(4)
   late String price;
 
+  @HiveField(5)
+  late int participants;
+
   ActivityEntityHive(
       {required this.activity,
       required this.type,
       required this.accessibility,
       required this.key,
-      required this.price});
+      required this.price,
+      required this.participants});
 
   ActivityEntityHive.fromEntity(ActivityEntity entity) {
     this.activity = entity.activity;
@@ -33,6 +37,7 @@ class ActivityEntityHive {
     this.accessibility = entity.accessibility;
     this.key = entity.key;
     this.price = entity.price;
+    this.participants = entity.participants;
   }
 
   ActivityEntity toEntity() {
@@ -41,6 +46,7 @@ class ActivityEntityHive {
         accessibility: accessibility,
         type: type,
         key: key,
-        price: price);
+        price: price,
+        participants: participants);
   }
 }

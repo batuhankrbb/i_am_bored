@@ -50,7 +50,8 @@ class ActivityModel extends BaseNetworkModel<ActivityModel> {
         type: type,
         price: convertedPrice,
         accessibility: accessibility,
-        key: key);
+        key: key,
+        participants: participants);
   }
 
   @override

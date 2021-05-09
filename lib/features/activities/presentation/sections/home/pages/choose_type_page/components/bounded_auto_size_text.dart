@@ -3,7 +3,12 @@ import '../../../../../../../../core/user_interface/responsive_layout/widgets/in
 import '../../../../../components/custom_text.dart';
 
 class BoundedAutoSizeText extends StatelessWidget {
-  const BoundedAutoSizeText({Key? key, required this.text, this.widthRatio = 0.6, this.heightRatio = 0.6}) : super(key: key);
+  const BoundedAutoSizeText(
+      {Key? key,
+      required this.text,
+      this.widthRatio = 0.5,
+      this.heightRatio = 0.5})
+      : super(key: key);
 
   final String text;
   final double widthRatio;
@@ -23,5 +28,3 @@ class BoundedAutoSizeText extends StatelessWidget {
     });
   }
 }
-
-

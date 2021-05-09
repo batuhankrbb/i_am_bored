@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:im_bored_app/core/navigation/routes/navigation_routes.dart';
+import 'package:im_bored_app/core/navigation/services/navigation_service.dart';
 import 'package:im_bored_app/core/user_interface/responsive_layout/widgets/informer_widget.dart';
+import 'package:im_bored_app/features/activities/presentation/components/custom_app_bar.dart';
+import 'package:im_bored_app/features/activities/presentation/sections/favorites/pages/favorite_activities_page/favorite_activities_page.dart';
+import 'package:im_bored_app/features/activities/presentation/sections/home/pages/activity_detail_page/activity_detail_page.dart';
+import 'package:im_bored_app/features/activities/presentation/sections/home/pages/im_not_page/im_not_page.dart';
 import '../../../../../../../core/base/base_state.dart';
 import '../../../../../../../core/user_interface/extensions/context_extension.dart';
 import '../../../../components/custom_big_text.dart';
@@ -64,16 +70,6 @@ class _MainPageState extends BaseState<HomePage> {
     );
   }
 
-  Container buildGetFavoritesButton() {
-    return Container(
-      padding: EdgeInsets.all(4),
-      child: CustomBorderedButton(
-        text: "Give me my favorites",
-        onPressed: () {},
-      ),
-    );
-  }
-
   Widget buildBigText() {
     return InformerWidget(onPageBuild: (context, info) {
       return Container(
@@ -87,17 +83,41 @@ class _MainPageState extends BaseState<HomePage> {
     });
   }
 
+   Container buildGetFavoritesButton() {
+    return Container(
+      padding: EdgeInsets.all(4),
+      child: CustomBorderedButton(
+        text: "Give me my favorites",
+        onPressed: () {
+          NavigationService().navigateTo(
+            NavigationRoute.favoritesPage(FavoriteActivitiesPage()),
+          );
+        },
+      ),
+    );
+  }
+
   Widget buildImNotButton() {
     return Padding(
       padding: EdgeInsets.all(context.customPadding(3)),
       child: CustomTextButton(
         text: "Nah, I'm not.",
-        onPressed: () {},
+        onPressed: () {
+          NavigationService().navigateTo(
+            NavigationRoute.iAmNotBoredPage(IAmNotBoredPage()),
+          );
+        },
       ),
     );
   }
 
   Widget buildImBoredButton() {
-    return CustomBoldTextButton(text: "I'm sooo bored", onPressed: () {});
+    return CustomBoldTextButton(
+        text: "I'm sooo bored",
+        onPressed: () {
+          NavigationService().navigateTo(
+            NavigationRoute.activityDetailPage(ActivityDetailPage()),
+          );
+        });
   }
 }

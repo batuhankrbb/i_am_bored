@@ -1,8 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:im_bored_app/core/navigation/services/navigation_service.dart';
 import 'package:im_bored_app/core/user_interface/responsive_layout/utils/device_enums.dart';
 import 'package:im_bored_app/core/user_interface/responsive_layout/utils/screen_information_model.dart';
 import 'package:im_bored_app/core/user_interface/responsive_layout/widgets/informer_widget.dart';
+import 'package:im_bored_app/features/activities/presentation/components/custom_app_bar.dart';
 import 'package:im_bored_app/features/activities/presentation/components/custom_big_text.dart';
 import '../../../../../../../core/user_interface/extensions/context_extension.dart';
 import '../../../../components/custom_text.dart';
@@ -18,6 +20,7 @@ class _IAmNotBoredPageState extends State<IAmNotBoredPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(),
       body: SafeArea(
         child: Container(
           alignment: Alignment.center,

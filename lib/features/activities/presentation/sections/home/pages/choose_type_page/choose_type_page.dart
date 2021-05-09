@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:im_bored_app/features/activities/presentation/components/custom_app_bar.dart';
 import 'package:im_bored_app/features/activities/presentation/components/custom_big_text.dart';
-import '../../../../../utils/activity_types.dart';
+import 'package:im_bored_app/features/activities/presentation/sections/home/viewmodel/home_view_model.dart';
+import 'package:im_bored_app/features/activities/starting_files/get_it_injection_container.dart';
 import 'package:im_bored_app/core/user_interface/extensions/context_extension.dart';
 
 import 'components/text_list_wheel_view.dart';
@@ -13,9 +15,19 @@ class ChooseTypePage extends StatefulWidget {
 }
 
 class _ChooseTypePageState extends State<ChooseTypePage> {
+  late HomeViewModel _homeViewModel;
+
+  @override
+  void initState() {
+    super.initState();
+    _homeViewModel = getit.get<HomeViewModel>();
+    _homeViewModel.setContext(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(),
       body: SafeArea(
         child: Column(
           children: [
@@ -44,18 +56,8 @@ class _ChooseTypePageState extends State<ChooseTypePage> {
 
   TextListWheelView buildTextListWheelView() {
     return TextListWheelView(
-      textList: [
-        "Relaxation",
-        "Charity",
-        "Sport",
-        "Socialising",
-        "stranger",
-        "test batu"
-      ],
-      controller: ScrollController(),
-      onSelectedItemChanged: (index) {
-        print("changed $index");
-      },
+      textList: _homeViewModel.allActivities,
+      onSelectedItemChanged: _homeViewModel.changeCurrentActivityType,
     );
   }
 

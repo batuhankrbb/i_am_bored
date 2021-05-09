@@ -9,6 +9,23 @@ part of 'home_view_model.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$HomeViewModel on _HomeViewModel, Store {
+  final _$selectedActivityTypeAtom =
+      Atom(name: '_HomeViewModel.selectedActivityType');
+
+  @override
+  String get selectedActivityType {
+    _$selectedActivityTypeAtom.reportRead();
+    return super.selectedActivityType;
+  }
+
+  @override
+  set selectedActivityType(String value) {
+    _$selectedActivityTypeAtom.reportWrite(value, super.selectedActivityType,
+        () {
+      super.selectedActivityType = value;
+    });
+  }
+
   final _$activityStateResultAtom =
       Atom(name: '_HomeViewModel.activityStateResult');
 
@@ -25,13 +42,29 @@ mixin _$HomeViewModel on _HomeViewModel, Store {
     });
   }
 
+  final _$isCurrentActivityFavoriteAtom =
+      Atom(name: '_HomeViewModel.isCurrentActivityFavorite');
+
+  @override
+  bool get isCurrentActivityFavorite {
+    _$isCurrentActivityFavoriteAtom.reportRead();
+    return super.isCurrentActivityFavorite;
+  }
+
+  @override
+  set isCurrentActivityFavorite(bool value) {
+    _$isCurrentActivityFavoriteAtom
+        .reportWrite(value, super.isCurrentActivityFavorite, () {
+      super.isCurrentActivityFavorite = value;
+    });
+  }
+
   final _$getActivityByTypeAsyncAction =
       AsyncAction('_HomeViewModel.getActivityByType');
 
   @override
-  Future<void> getActivityByType(ActivityType type) {
-    return _$getActivityByTypeAsyncAction
-        .run(() => super.getActivityByType(type));
+  Future<void> getActivityByType() {
+    return _$getActivityByTypeAsyncAction.run(() => super.getActivityByType());
   }
 
   final _$getRandomActivityAsyncAction =
@@ -42,29 +75,39 @@ mixin _$HomeViewModel on _HomeViewModel, Store {
     return _$getRandomActivityAsyncAction.run(() => super.getRandomActivity());
   }
 
-  final _$saveActivityAsFavoriteAsyncAction =
-      AsyncAction('_HomeViewModel.saveActivityAsFavorite');
+  final _$favoriteButtonPressedAsyncAction =
+      AsyncAction('_HomeViewModel.favoriteButtonPressed');
 
   @override
-  Future<void> saveActivityAsFavorite(ActivityEntity entity) {
-    return _$saveActivityAsFavoriteAsyncAction
-        .run(() => super.saveActivityAsFavorite(entity));
+  Future<void> favoriteButtonPressed() {
+    return _$favoriteButtonPressedAsyncAction
+        .run(() => super.favoriteButtonPressed());
   }
 
-  final _$removeActivityFromFavoriteAsyncAction =
-      AsyncAction('_HomeViewModel.removeActivityFromFavorite');
+  final _$_saveActivityAsFavoriteAsyncAction =
+      AsyncAction('_HomeViewModel._saveActivityAsFavorite');
 
   @override
-  Future<void> removeActivityFromFavorite(
-      ActivityEntity entity, BuildContext context) {
-    return _$removeActivityFromFavoriteAsyncAction
-        .run(() => super.removeActivityFromFavorite(entity, context));
+  Future<void> _saveActivityAsFavorite() {
+    return _$_saveActivityAsFavoriteAsyncAction
+        .run(() => super._saveActivityAsFavorite());
+  }
+
+  final _$_removeActivityFromFavoriteAsyncAction =
+      AsyncAction('_HomeViewModel._removeActivityFromFavorite');
+
+  @override
+  Future<void> _removeActivityFromFavorite() {
+    return _$_removeActivityFromFavoriteAsyncAction
+        .run(() => super._removeActivityFromFavorite());
   }
 
   @override
   String toString() {
     return '''
-activityStateResult: ${activityStateResult}
+selectedActivityType: ${selectedActivityType},
+activityStateResult: ${activityStateResult},
+isCurrentActivityFavorite: ${isCurrentActivityFavorite}
     ''';
   }
 }

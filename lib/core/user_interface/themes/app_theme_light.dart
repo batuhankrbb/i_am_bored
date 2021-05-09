@@ -13,17 +13,16 @@ class AppThemeLight {
     return _AppThemeLightInstance;
   }
 
-    ThemeData get theme => ThemeData.light().copyWith(
-        colorScheme: ColorScheme.light().copyWith(
+  ThemeData get theme => ThemeData.light().copyWith(
+      colorScheme: ColorScheme.light().copyWith(
           primary: _customColor.black,
           secondary: _customColor.white,
-        ),
-        scaffoldBackgroundColor: _customColor.brown,
-        backgroundColor: _customColor.black,
-        textTheme: ThemeData.light().textTheme.apply(fontFamily: "Helvetica"),
-        primaryTextTheme:
-            ThemeData.light().textTheme.apply(fontFamily: "Helvetica"),
-        accentTextTheme:
-            ThemeData.light().textTheme.apply(fontFamily: "Helvetica")
-      );
+          onError: _customColor.red),
+      scaffoldBackgroundColor: _customColor.brown,
+      backgroundColor: _customColor.black,
+      textTheme: ThemeData.light().textTheme.apply(fontFamily: "Helvetica"),
+      primaryTextTheme:
+          ThemeData.light().textTheme.apply(fontFamily: "Helvetica"),
+      accentTextTheme:
+          ThemeData.light().textTheme.apply(fontFamily: "Helvetica"));
 }

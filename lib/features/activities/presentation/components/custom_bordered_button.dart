@@ -19,14 +19,17 @@ class CustomBorderedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InformerWidget(onPageBuild: (context, info) {
-      return Container(
-        width: info.screenSize.width * widthRatio,
-        height: info.screenSize.height * 0.04,
-        decoration: BoxDecoration(
-          border: Border.all(color: context.secondaryColor, width: 2),
-          borderRadius: BorderRadius.circular(12),
+      return GestureDetector(
+        onTap: onPressed,
+        child: Container(
+          width: info.screenSize.width * widthRatio,
+          height: info.screenSize.height * 0.04,
+          decoration: BoxDecoration(
+            border: Border.all(color: context.secondaryColor, width: 2),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: buildAutoSizeText(context),
         ),
-        child: buildAutoSizeText(context),
       );
     });
   }

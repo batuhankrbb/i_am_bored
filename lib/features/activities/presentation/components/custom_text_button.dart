@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:im_bored_app/core/constants/custom_colors.dart';
 
 import '../../../../core/user_interface/extensions/context_extension.dart';
 import '../../../../core/user_interface/responsive_layout/widgets/informer_widget.dart';
@@ -24,7 +25,10 @@ class CustomTextButton extends StatelessWidget {
       return TextButton(
         onPressed: onPressed,
         child: buildAutoSizeText(context),
-        style: TextButton.styleFrom(primary: context.secondaryColor),
+        style: ButtonStyle(
+          foregroundColor: MaterialStateProperty.all(context.secondaryColor),
+          overlayColor: MaterialStateProperty.all(CustomColor().transparent),
+        ),
       );
     });
   }

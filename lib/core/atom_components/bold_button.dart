@@ -14,9 +14,9 @@ class BoldButton extends StatelessWidget {
     return InformerWidget(
       onPageBuild: (context, information) {
         return ElevatedButton(
-          //Elevated ile değiştir
           style: ElevatedButton.styleFrom(
             primary: context.secondaryColor,
+            onPrimary: context.secondaryColor,
             padding: EdgeInsets.all(context.padding8),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),

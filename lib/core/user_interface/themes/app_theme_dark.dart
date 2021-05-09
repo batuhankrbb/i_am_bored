@@ -4,8 +4,8 @@ import '../../constants/custom_colors.dart';
 
 class AppThemeDark {
   AppThemeDark._();
-
-  CustomColor _customColor = CustomColor();
+  
+  CustomColor  _customColor = CustomColor();
 
   static final AppThemeDark _AppThemeDarkInstance = AppThemeDark._();
 
@@ -17,6 +17,7 @@ class AppThemeDark {
       colorScheme: ColorScheme.dark().copyWith(
         primary: _customColor.black,
         secondary: _customColor.white,
+        onError: _customColor.red
       ),
       scaffoldBackgroundColor: _customColor.brown,
       backgroundColor: _customColor.black,

@@ -15,31 +15,28 @@ class HiveHelper {
   Future<void> setUpHive() async {
     await Hive.initFlutter();
     Hive.registerAdapter(ActivityEntityHiveAdapter());
-    var boxes = [HiveConstants().CACHE_BOX, HiveConstants().FAVORITES_BOX];
 
-    for (var box in boxes) {
-      Hive.openBox(box);
-    }
+    await Hive.openBox(HiveConstants().CACHE_BOX);
+    await Hive.openBox(HiveConstants().FAVORITES_BOX);
   }
 
-  T getData<T>(String boxName, dynamic key) {
-    var box = Hive.box(boxName);
-    return box.get(key);
+  Future<T> getData<T>(String boxName, dynamic key) async {
+    var box =  Hive.box<T>(boxName);
+    return box.get(key)!;
   }
 
   Future<void> deleteData<T>(String boxName, dynamic key) async {
-    var box = Hive.box(boxName);
+    var box =  Hive.box<T>(boxName);
     await box.delete(key);
   }
 
   Future<void> putData<T>(String boxName, dynamic key, T data) async {
-    var box = Hive.box(boxName);
+    var box =  Hive.box<T>(boxName);
     await box.put(key, data);
   }
 
-  List<T> getAll<T>(String boxName) {
-    var box = Hive.box<T>(boxName);
+  Future<List<T>> getAll<T>(String boxName) async {
+    var box =  Hive.box<T>(boxName);
     return box.values.toList();
   }
-
 }

@@ -30,7 +30,6 @@ class CustomAutoSizeText extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(padding),
       child: InformerWidget(onPageBuild: (context, info) {
-        print(info.boundsSize);
         return AutoSizeText(
           text,
           textAlign: textAlign,

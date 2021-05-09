@@ -19,7 +19,7 @@ class AppThemeDark {
         secondary: _customColor.white,
         onError: _customColor.red
       ),
-      scaffoldBackgroundColor: _customColor.brown,
+      scaffoldBackgroundColor: _customColor.black,
       backgroundColor: _customColor.black,
       textTheme: ThemeData.dark().textTheme.apply(fontFamily: "Helvetica"),
       primaryTextTheme:

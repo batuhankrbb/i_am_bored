@@ -15,7 +15,6 @@ class NavigationService {
 
   Future<dynamic>? navigateTo(NavigationRoute route) {
     if (navigatorKey.currentState == null) {
-      print("null");
       return null;
     }
     return navigatorKey.currentState!

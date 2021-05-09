@@ -6,7 +6,6 @@ import 'package:im_bored_app/features/activities/presentation/components/custom_
 import 'package:im_bored_app/features/activities/presentation/sections/favorites/pages/favorite_activities_page/favorite_activities_page.dart';
 import 'package:im_bored_app/features/activities/presentation/sections/home/pages/activity_detail_page/activity_detail_page.dart';
 import 'package:im_bored_app/features/activities/presentation/sections/home/pages/im_not_page/im_not_page.dart';
-import '../../../../../../../core/base/base_state.dart';
 import '../../../../../../../core/user_interface/extensions/context_extension.dart';
 import '../../../../components/custom_big_text.dart';
 import '../../../../components/custom_bold_text_button.dart';
@@ -20,7 +19,7 @@ class HomePage extends StatefulWidget {
   _MainPageState createState() => _MainPageState();
 }
 
-class _MainPageState extends BaseState<HomePage> {
+class _MainPageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

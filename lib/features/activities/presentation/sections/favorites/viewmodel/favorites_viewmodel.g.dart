@@ -25,6 +25,13 @@ mixin _$FavoritesViewModel on _FavoritesViewModel, Store {
     });
   }
 
+  final _$onDismissAsyncAction = AsyncAction('_FavoritesViewModel.onDismiss');
+
+  @override
+  Future<void> onDismiss(DismissDirection direction) {
+    return _$onDismissAsyncAction.run(() => super.onDismiss(direction));
+  }
+
   final _$getAllFavoritesAsyncAction =
       AsyncAction('_FavoritesViewModel.getAllFavorites');
 

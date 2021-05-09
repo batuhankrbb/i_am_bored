@@ -22,6 +22,19 @@ abstract class _FavoritesViewModel with Store {
   @observable
   StateResult<List<ActivityEntity>> favoriteActivities = StateResult.initial();
 
+  void setContext(BuildContext context) {
+    this.context = context;
+  }
+
+  @action
+  Future<void> onDismiss(DismissDirection direction) async {
+    favoriteActivities.maybeWhen(
+        orElse: () => null,
+        completed: (result) {
+          deleteFavoriteActivity(result[direction.index].key);
+        });
+  }
+
   @action
   Future<void> getAllFavorites() async {
     favoriteActivities = StateResult.loading();
@@ -41,10 +54,6 @@ abstract class _FavoritesViewModel with Store {
     }, failure: (failure) {
       _showAlertDialog(failure.message);
     });
-  }
-
-  void setContext(BuildContext context) {
-    this.context = context;
   }
 
   void _showAlertDialog(String message) {

@@ -21,7 +21,7 @@ class ActivityEntityHiveAdapter extends TypeAdapter<ActivityEntityHive> {
       type: fields[1] as String,
       accessibility: fields[2] as num,
       key: fields[3] as String,
-      price: fields[4] as String,
+      price: fields[4] as num,
       participants: fields[5] as int,
     );
   }

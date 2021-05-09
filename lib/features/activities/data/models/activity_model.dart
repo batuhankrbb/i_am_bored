@@ -44,11 +44,10 @@ class ActivityModel extends BaseNetworkModel<ActivityModel> {
   }
 
   ActivityEntity toEntity() {
-    var convertedPrice = "$price";
     return ActivityEntity(
         activity: activity,
         type: type,
-        price: convertedPrice,
+        price: price,
         accessibility: accessibility,
         key: key,
         participants: participants);

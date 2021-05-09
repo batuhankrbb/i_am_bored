@@ -18,7 +18,7 @@ class ActivityEntityHive {
   late String key;
 
   @HiveField(4)
-  late String price;
+  late num price;
 
   @HiveField(5)
   late int participants;

@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:im_bored_app/core/navigation/services/navigation_service.dart';
+import 'package:im_bored_app/features/activities/domain/entities/activity_entity.dart';
+import 'package:im_bored_app/features/activities/presentation/components/custom_app_bar.dart';
+import 'package:im_bored_app/features/activities/presentation/sections/favorites/pages/favorites_detail_page/components/favorite_activity_info_text.dart';
+import 'package:im_bored_app/features/activities/presentation/sections/favorites/viewmodel/favorites_viewmodel.dart';
+import 'package:im_bored_app/features/activities/starting_files/get_it_injection_container.dart';
 import '../../../../components/custom_bold_text_button.dart';
 import '../../../../components/custom_text.dart';
 import '../../../../../../../core/user_interface/extensions/context_extension.dart';
 
 class ActivityFavoriteDetailPage extends StatefulWidget {
-  ActivityFavoriteDetailPage({Key? key}) : super(key: key);
+  ActivityFavoriteDetailPage({Key? key, required this.entity})
+      : super(key: key);
 
   @override
   _ActivityFavoriteDetailPageState createState() =>
       _ActivityFavoriteDetailPageState();
+
+  final ActivityEntity entity;
 }
 
 class _ActivityFavoriteDetailPageState
@@ -16,6 +25,7 @@ class _ActivityFavoriteDetailPageState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(),
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.all(context.padding6),
@@ -32,18 +42,16 @@ class _ActivityFavoriteDetailPageState
                 flex: 8,
               ),
               Expanded(
-                flex: 35,
-                child: buildActivityInfoTexts(),
+                flex: 45,
+                child: FavoriteActivityInfoTexts(
+                  entity: widget.entity,
+                ),
               ),
               Spacer(
                 flex: 7,
               ),
-              Expanded(
-                flex: 20,
-                child: buildButtonAndText(context),
-              ),
               Spacer(
-                flex: 5,
+                flex: 25,
               ),
             ],
           ),
@@ -56,68 +64,9 @@ class _ActivityFavoriteDetailPageState
     return Container(
       padding: EdgeInsets.only(left: context.padding8, right: context.padding4),
       child: CustomAutoSizeText(
-        text: "Create a cookbook that is your favorite you mf",
+        text: widget.entity.activity,
         fontSize: 100,
         maxLines: null,
-      ),
-    );
-  }
-
-  Container buildButtonAndText(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(context.padding8),
-      child: Column(
-        children: [
-          Expanded(
-            flex: 15,
-            child: CustomAutoSizeText(
-              text: "if you are tired of doing this",
-              fontSize: 60,
-            ),
-          ),
-          Spacer(
-            flex: 8,
-          ),
-          Expanded(
-              flex: 25,
-              child: CustomBoldTextButton(
-                  text: "remove from favorites", onPressed: () {}))
-        ],
-      ),
-    );
-  }
-
-  Widget buildActivityInfoTexts() {
-    return Container(
-      padding: EdgeInsets.all(context.padding8),
-      child: Column(
-        children: [
-          Spacer(),
-          Expanded(
-            flex: 4,
-            child: CustomAutoSizeText(
-              text: "You need 1+ person to do it",
-            ),
-          ),
-          Spacer(),
-          Expanded(
-            flex: 4,
-            child: CustomAutoSizeText(
-              text: "The type of this activity is relaxation",
-              fontSize: 60,
-            ),
-          ),
-          Spacer(),
-          Expanded(
-            flex: 4,
-            child: CustomAutoSizeText(
-              text: "This activity is more expensive than %25 activities",
-              maxLines: 2,
-              textAlign: TextAlign.center,
-            ),
-          ),
-          Spacer(),
-        ],
       ),
     );
   }

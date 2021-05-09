@@ -16,8 +16,8 @@ class HiveHelper {
     await Hive.initFlutter();
     Hive.registerAdapter(ActivityEntityHiveAdapter());
 
-    await Hive.openBox(HiveConstants().CACHE_BOX);
-    await Hive.openBox(HiveConstants().FAVORITES_BOX);
+    await Hive.openBox<ActivityEntityHive>(HiveConstants().CACHE_BOX);
+    await Hive.openBox<ActivityEntityHive>(HiveConstants().FAVORITES_BOX);
   }
 
   Future<T> getData<T>(String boxName, dynamic key) async {

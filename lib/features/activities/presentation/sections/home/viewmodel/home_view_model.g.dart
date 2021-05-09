@@ -79,27 +79,27 @@ mixin _$HomeViewModel on _HomeViewModel, Store {
       AsyncAction('_HomeViewModel.favoriteButtonPressed');
 
   @override
-  Future<void> favoriteButtonPressed() {
+  Future<void> favoriteButtonPressed(ActivityEntity entity) {
     return _$favoriteButtonPressedAsyncAction
-        .run(() => super.favoriteButtonPressed());
+        .run(() => super.favoriteButtonPressed(entity));
   }
 
   final _$_saveActivityAsFavoriteAsyncAction =
       AsyncAction('_HomeViewModel._saveActivityAsFavorite');
 
   @override
-  Future<void> _saveActivityAsFavorite() {
+  Future<void> _saveActivityAsFavorite(ActivityEntity entity) {
     return _$_saveActivityAsFavoriteAsyncAction
-        .run(() => super._saveActivityAsFavorite());
+        .run(() => super._saveActivityAsFavorite(entity));
   }
 
   final _$_removeActivityFromFavoriteAsyncAction =
       AsyncAction('_HomeViewModel._removeActivityFromFavorite');
 
   @override
-  Future<void> _removeActivityFromFavorite() {
+  Future<void> _removeActivityFromFavorite(ActivityEntity entity) {
     return _$_removeActivityFromFavoriteAsyncAction
-        .run(() => super._removeActivityFromFavorite());
+        .run(() => super._removeActivityFromFavorite(entity));
   }
 
   @override

@@ -48,7 +48,7 @@ abstract class _HomeViewModel with Store {
   Future<void> getActivityByType() async {
     activityStateResult = StateResult.loading();
     var result = await getActivityByTypeUseCase.execute(selectedActivityType);
-    result.when(success: (data) {
+     result.when(success: (data) {
       isCurrentActivityFavorite = false;
       activityStateResult = StateResult.completed(data);
     }, failure: (failure) {
@@ -69,42 +69,32 @@ abstract class _HomeViewModel with Store {
   }
 
   @action
-  Future<void> favoriteButtonPressed() async {
+  Future<void> favoriteButtonPressed(ActivityEntity entity) async {
     if (isCurrentActivityFavorite) {
-      _removeActivityFromFavorite();
+     await _removeActivityFromFavorite(entity);
     } else {
-      _saveActivityAsFavorite();
+    await _saveActivityAsFavorite(entity);
     }
   }
 
   @action
-  Future<void> _saveActivityAsFavorite() async {
-    activityStateResult.maybeWhen(
-      orElse: () => null,
-      completed: (data) async {
-        var result = await saveActivityAsFavoriteUseCase.execute(data);
-        result.when(success: (_) {
-          isCurrentActivityFavorite = true;
-        }, failure: (failure) {
-          _showAlertDialog(failure.message);
-        });
-      },
-    );
+  Future<void> _saveActivityAsFavorite(ActivityEntity entity) async {
+    var result = await saveActivityAsFavoriteUseCase.execute(entity);
+    result.when(success: (_) {
+      isCurrentActivityFavorite = true;
+    }, failure: (failure) {
+      _showAlertDialog(failure.message);
+    });
   }
 
   @action
-  Future<void> _removeActivityFromFavorite() async {
-    activityStateResult.maybeWhen(
-      orElse: () => null,
-      completed: (data) async {
-        var result = await deleteFavoriteActivityUseCase.execute(data.key);
-        result.when(success: (_) {
-          isCurrentActivityFavorite = true;
-        }, failure: (failure) {
-          _showAlertDialog(failure.message);
-        });
-      },
-    );
+  Future<void> _removeActivityFromFavorite(ActivityEntity entity) async {
+    var result = await deleteFavoriteActivityUseCase.execute(entity.key);
+    result.when(success: (_) {
+      isCurrentActivityFavorite = false;
+    }, failure: (failure) {
+      _showAlertDialog(failure.message);
+    });
   }
 
   void _showAlertDialog(String message) {
@@ -118,5 +108,3 @@ abstract class _HomeViewModel with Store {
         });
   }
 }
-
-//* alertleri düzenle. Belki bi alerthelper yap

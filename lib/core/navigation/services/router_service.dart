@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 import 'package:im_bored_app/core/navigation/routes/navigation_routes.dart';
 
@@ -28,7 +28,7 @@ class RouterService {
     );
   }
 
-  static MaterialPageRoute _convertToRoute(Widget page) {
-    return MaterialPageRoute(builder: (_) => page);
+  static CupertinoPageRoute _convertToRoute(Widget page) {
+    return CupertinoPageRoute(builder: (_) => page);
   }
 }

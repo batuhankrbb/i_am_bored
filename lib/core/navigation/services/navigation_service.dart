@@ -5,11 +5,11 @@ import '../routes/navigation_routes.dart';
 class NavigationService {
   NavigationService._();
 
-  static final NavigationService _NavigationServiceInstance =
+  static final NavigationService _navigationServiceInstance =
       NavigationService._();
 
   factory NavigationService() {
-    return _NavigationServiceInstance;
+    return _navigationServiceInstance;
   }
 
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();

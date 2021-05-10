@@ -14,9 +14,7 @@ void main() async {
   await HiveHelper().setUpHive();
   setUpGetIt();
   runApp(
-    DevicePreview(
-      builder: (_) => MyApp(),
-    ),
+    MyApp(),
   );
 }
 
@@ -24,7 +22,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
       title: "You can't be bored!",
       initialRoute: NavigationRoute.homePage(HomePage()).rawValue,

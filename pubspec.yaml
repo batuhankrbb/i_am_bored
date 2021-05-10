@@ -27,7 +27,6 @@ dependencies:
   build_runner: ^2.0.1
   connectivity: ^3.0.3
   cupertino_icons: ^1.0.2
-  device_preview: ^0.7.1
   dio: ^4.0.0
   flutter_mobx: ^2.0.0
   freezed: ^0.14.1+3

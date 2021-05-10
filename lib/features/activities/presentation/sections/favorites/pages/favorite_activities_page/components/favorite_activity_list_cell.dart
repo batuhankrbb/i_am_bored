@@ -27,7 +27,6 @@ class FavoriteActivityListCell extends StatelessWidget {
       return Dismissible(
         key: Key(entity.key),
         onDismissed: (direction) {
-          print("burada ${direction.index}}");
           onDismissed(direction,index);
         },
         direction: DismissDirection.endToStart,

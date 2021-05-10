@@ -1,6 +1,0 @@
-//Commitleri Düzenle
-//ActivityDetail page'i yap (UI önemsiz şaunlık)
-//Favori pagelerini yap (UI önemsiz)
-//Viewmodellere çeki düzen ver
-//Tüm uygulama sorunsuz çalıştıktan sonra ayırmaları yap
-//UI Ayarla

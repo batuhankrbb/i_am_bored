@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/features/activities/domain/entities/activity_entity.dart';
-import 'package:im_bored_app/features/activities/presentation/components/custom_text.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/home/viewmodel/home_view_model.dart';
+
+import '../../../../../../domain/entities/activity_entity.dart';
+import '../../../../../components/custom_text.dart';
 
 class ActivityInfoTexts extends StatelessWidget {
   const ActivityInfoTexts({Key? key, required this.entity}) : super(key: key);

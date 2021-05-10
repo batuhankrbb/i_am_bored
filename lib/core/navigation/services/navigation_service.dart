@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:im_bored_app/core/navigation/routes/navigation_routes.dart';
+
+import '../routes/navigation_routes.dart';
 
 class NavigationService {
   NavigationService._();

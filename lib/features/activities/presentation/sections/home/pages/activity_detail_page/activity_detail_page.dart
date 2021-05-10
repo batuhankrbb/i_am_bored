@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:im_bored_app/core/constants/custom_colors.dart';
-import 'package:im_bored_app/core/navigation/routes/navigation_routes.dart';
-import 'package:im_bored_app/core/navigation/services/navigation_service.dart';
-import 'package:im_bored_app/features/activities/domain/entities/activity_entity.dart';
-import 'package:im_bored_app/features/activities/presentation/components/custom_app_bar.dart';
-import 'package:im_bored_app/features/activities/presentation/components/loading_indicator.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/home/pages/activity_detail_page/components/activity_failure.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/home/pages/activity_detail_page/components/activity_initial.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/home/pages/activity_detail_page/components/activity_loaded.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/home/pages/choose_type_page/choose_type_page.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/home/viewmodel/home_view_model.dart';
-import 'package:im_bored_app/features/activities/starting_files/get_it_injection_container.dart';
+
+import '../../../../../../../core/navigation/routes/navigation_routes.dart';
+import '../../../../../../../core/navigation/services/navigation_service.dart';
+import '../../../../../../../core/user_interface/extensions/context_extension.dart';
+import '../../../../../starting_files/get_it_injection_container.dart';
+import '../../../../components/custom_app_bar.dart';
 import '../../../../components/custom_bold_text_button.dart';
 import '../../../../components/custom_text_button.dart';
-import '../../../../../../../core/user_interface/extensions/context_extension.dart';
-
-import 'components/activity_info_texts.dart';
+import '../../../../components/loading_indicator.dart';
+import '../../viewmodel/home_view_model.dart';
+import '../choose_type_page/choose_type_page.dart';
+import 'components/activity_failure.dart';
+import 'components/activity_initial.dart';
+import 'components/activity_loaded.dart';
 import 'components/custom_text_button_between_lines.dart';
 
 class ActivityDetailPage extends StatefulWidget {

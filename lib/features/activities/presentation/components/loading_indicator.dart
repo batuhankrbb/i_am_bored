@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/core/user_interface/extensions/context_extension.dart';
-import 'package:im_bored_app/core/user_interface/responsive_layout/widgets/informer_widget.dart';
+
+import '../../../../core/user_interface/extensions/context_extension.dart';
+import '../../../../core/user_interface/responsive_layout/widgets/informer_widget.dart';
 
 class LoadingIndicator extends StatelessWidget {
   const LoadingIndicator({Key? key}) : super(key: key);

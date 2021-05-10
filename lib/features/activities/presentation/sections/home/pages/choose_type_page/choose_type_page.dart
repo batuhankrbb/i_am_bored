@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/features/activities/presentation/components/custom_app_bar.dart';
-import 'package:im_bored_app/features/activities/presentation/components/custom_big_text.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/home/viewmodel/home_view_model.dart';
-import 'package:im_bored_app/features/activities/starting_files/get_it_injection_container.dart';
-import 'package:im_bored_app/core/user_interface/extensions/context_extension.dart';
 
+import '../../../../../../../core/user_interface/extensions/context_extension.dart';
+import '../../../../../starting_files/get_it_injection_container.dart';
+import '../../../../components/custom_app_bar.dart';
+import '../../../../components/custom_big_text.dart';
+import '../../viewmodel/home_view_model.dart';
 import 'components/text_list_wheel_view.dart';
 
 class ChooseTypePage extends StatefulWidget {

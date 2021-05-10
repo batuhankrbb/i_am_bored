@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/features/activities/presentation/components/custom_text.dart';
-import 'package:im_bored_app/core/user_interface/extensions/context_extension.dart';
+
+import '../../../../../../../../core/user_interface/extensions/context_extension.dart';
+import '../../../../../components/custom_text.dart';
 
 class ActivityFailure extends StatelessWidget {
   const ActivityFailure({Key? key, required this.failureMessage})

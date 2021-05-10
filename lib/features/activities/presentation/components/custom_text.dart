@@ -1,7 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/core/user_interface/responsive_layout/widgets/informer_widget.dart';
+
 import '../../../../core/user_interface/extensions/context_extension.dart';
+import '../../../../core/user_interface/responsive_layout/widgets/informer_widget.dart';
 
 class CustomAutoSizeText extends StatelessWidget {
   const CustomAutoSizeText(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../../../../core/user_interface/responsive_layout/widgets/informer_widget.dart';
 import '../../../../../components/custom_text.dart';
 

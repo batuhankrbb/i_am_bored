@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/features/activities/domain/entities/activity_entity.dart';
-import 'package:im_bored_app/features/activities/presentation/components/custom_text.dart';
-import 'package:im_bored_app/core/user_interface/extensions/context_extension.dart';
+
+import '../../../../../../../../core/user_interface/extensions/context_extension.dart';
+import '../../../../../../domain/entities/activity_entity.dart';
+import '../../../../../components/custom_text.dart';
 
 class FavoriteActivityInfoTexts extends StatelessWidget {
   const FavoriteActivityInfoTexts({Key? key, required this.entity})

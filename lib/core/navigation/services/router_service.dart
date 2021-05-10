@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
-import 'package:im_bored_app/core/navigation/routes/navigation_routes.dart';
+
+import '../routes/navigation_routes.dart';
 
 class RouterService {
   static Route<dynamic> generateCustomRoute(RouteSettings settings) {

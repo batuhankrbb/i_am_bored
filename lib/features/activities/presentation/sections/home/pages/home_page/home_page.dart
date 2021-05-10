@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/core/navigation/routes/navigation_routes.dart';
-import 'package:im_bored_app/core/navigation/services/navigation_service.dart';
-import 'package:im_bored_app/core/user_interface/responsive_layout/widgets/informer_widget.dart';
-import 'package:im_bored_app/features/activities/presentation/components/custom_app_bar.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/favorites/pages/favorite_activities_page/favorite_activities_page.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/home/pages/activity_detail_page/activity_detail_page.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/home/pages/im_not_page/im_not_page.dart';
+
+import '../../../../../../../core/navigation/routes/navigation_routes.dart';
+import '../../../../../../../core/navigation/services/navigation_service.dart';
 import '../../../../../../../core/user_interface/extensions/context_extension.dart';
+import '../../../../../../../core/user_interface/responsive_layout/widgets/informer_widget.dart';
 import '../../../../components/custom_big_text.dart';
 import '../../../../components/custom_bold_text_button.dart';
 import '../../../../components/custom_bordered_button.dart';
 import '../../../../components/custom_text_button.dart';
+import '../../../favorites/pages/favorite_activities_page/favorite_activities_page.dart';
+import '../activity_detail_page/activity_detail_page.dart';
+import '../im_not_page/im_not_page.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);

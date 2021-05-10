@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/features/activities/presentation/components/custom_text.dart';
+
+import '../../../../../components/custom_text.dart';
 
 class ActivityInitial extends StatelessWidget {
   const ActivityInitial({Key? key}) : super(key: key);

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/features/activities/presentation/components/custom_bold_text_button.dart';
-import 'package:im_bored_app/features/activities/presentation/components/custom_text.dart';
-import 'package:im_bored_app/core/user_interface/extensions/context_extension.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/favorites/viewmodel/favorites_viewmodel.dart';
-import 'package:im_bored_app/features/activities/starting_files/get_it_injection_container.dart';
+import '../../../../../components/custom_bold_text_button.dart';
+import '../../../../../components/custom_text.dart';
+import '../../../../../../../../core/user_interface/extensions/context_extension.dart';
+import '../../../viewmodel/favorites_viewmodel.dart';
+import '../../../../../../starting_files/get_it_injection_container.dart';
 
 class FavoriteActivityFailure extends StatelessWidget {
   FavoriteActivityFailure({Key? key, required this.failureMessage})

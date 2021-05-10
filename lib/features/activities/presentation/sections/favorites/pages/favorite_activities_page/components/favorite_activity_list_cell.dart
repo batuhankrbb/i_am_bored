@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/core/constants/custom_colors.dart';
-import 'package:im_bored_app/features/activities/domain/entities/activity_entity.dart';
-import '../../../../../../../../core/user_interface/responsive_layout/utils/device_enums.dart';
-import '../../../../../../../../core/user_interface/responsive_layout/widgets/informer_widget.dart';
+
+import '../../../../../../../../core/constants/custom_colors.dart';
 import '../../../../../../../../core/user_interface/extensions/context_extension.dart';
+import '../../../../../../../../core/user_interface/responsive_layout/utils/device_enums.dart';
+import '../../../../../../../../core/user_interface/responsive_layout/utils/screen_information_model.dart';
+import '../../../../../../../../core/user_interface/responsive_layout/widgets/informer_widget.dart';
+import '../../../../../../domain/entities/activity_entity.dart';
 import '../../../../../components/custom_text.dart';
-import 'package:im_bored_app/core/user_interface/responsive_layout/utils/screen_information_model.dart';
 
 class FavoriteActivityListCell extends StatelessWidget {
   const FavoriteActivityListCell(

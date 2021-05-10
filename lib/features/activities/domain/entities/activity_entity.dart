@@ -1,4 +1,4 @@
-import 'package:im_bored_app/core/utils/number_helper.dart';
+import '../../../../core/utils/number_helper.dart';
 
 class ActivityEntity {
   final String activity;

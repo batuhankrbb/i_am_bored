@@ -1,10 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/favorites/pages/favorite_activities_page/favorite_activities_page.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/favorites/pages/favorites_detail_page/favorites_detail_page.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/home/pages/activity_detail_page/activity_detail_page.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/home/pages/choose_type_page/choose_type_page.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/home/pages/home_page/home_page.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/home/pages/im_not_page/im_not_page.dart';
+
+import '../../../features/activities/presentation/sections/favorites/pages/favorite_activities_page/favorite_activities_page.dart';
+import '../../../features/activities/presentation/sections/favorites/pages/favorites_detail_page/favorites_detail_page.dart';
+import '../../../features/activities/presentation/sections/home/pages/activity_detail_page/activity_detail_page.dart';
+import '../../../features/activities/presentation/sections/home/pages/choose_type_page/choose_type_page.dart';
+import '../../../features/activities/presentation/sections/home/pages/home_page/home_page.dart';
+import '../../../features/activities/presentation/sections/home/pages/im_not_page/im_not_page.dart';
 
 part 'navigation_routes.freezed.dart';
 

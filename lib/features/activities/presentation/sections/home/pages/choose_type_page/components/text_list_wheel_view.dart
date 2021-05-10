@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/home/viewmodel/home_view_model.dart';
-import 'package:im_bored_app/features/activities/starting_files/get_it_injection_container.dart';
 
 import '../../../../../../../../core/user_interface/responsive_layout/widgets/informer_widget.dart';
+import '../../../../../../starting_files/get_it_injection_container.dart';
+import '../../../viewmodel/home_view_model.dart';
 import 'bounded_auto_size_text.dart';
 
 class TextListWheelView extends StatefulWidget {

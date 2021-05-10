@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/core/navigation/services/navigation_service.dart';
-import 'package:im_bored_app/features/activities/domain/entities/activity_entity.dart';
-import 'package:im_bored_app/features/activities/presentation/components/custom_app_bar.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/favorites/pages/favorites_detail_page/components/favorite_activity_info_text.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/favorites/viewmodel/favorites_viewmodel.dart';
-import 'package:im_bored_app/features/activities/starting_files/get_it_injection_container.dart';
+import '../../../../../../../core/navigation/services/navigation_service.dart';
+import '../../../../../domain/entities/activity_entity.dart';
+import '../../../../components/custom_app_bar.dart';
+import 'components/favorite_activity_info_text.dart';
+import '../../viewmodel/favorites_viewmodel.dart';
+import '../../../../../starting_files/get_it_injection_container.dart';
 import '../../../../components/custom_bold_text_button.dart';
 import '../../../../components/custom_text.dart';
 import '../../../../../../../core/user_interface/extensions/context_extension.dart';

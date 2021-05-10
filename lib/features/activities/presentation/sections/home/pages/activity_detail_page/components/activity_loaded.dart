@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:im_bored_app/features/activities/domain/entities/activity_entity.dart';
-import 'package:im_bored_app/features/activities/presentation/components/custom_bordered_button.dart';
-import 'package:im_bored_app/features/activities/presentation/components/custom_text.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/home/pages/activity_detail_page/components/activity_info_texts.dart';
-import 'package:im_bored_app/features/activities/presentation/sections/home/viewmodel/home_view_model.dart';
-import 'package:im_bored_app/features/activities/starting_files/get_it_injection_container.dart';
-import 'package:im_bored_app/core/user_interface/extensions/context_extension.dart';
+
+import '../../../../../../../../core/user_interface/extensions/context_extension.dart';
+import '../../../../../../domain/entities/activity_entity.dart';
+import '../../../../../../starting_files/get_it_injection_container.dart';
+import '../../../../../components/custom_bordered_button.dart';
+import '../../../../../components/custom_text.dart';
+import '../../../viewmodel/home_view_model.dart';
+import 'activity_info_texts.dart';
 
 class ActivityLoaded extends StatelessWidget {
   ActivityLoaded({Key? key, required this.entity}) : super(key: key);

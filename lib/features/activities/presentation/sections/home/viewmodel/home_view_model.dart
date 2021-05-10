@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/core/user_interface/helpers/alert_helper.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../../../../../core/result_types/state_result.dart';
+import '../../../../../../core/user_interface/helpers/alert_helper.dart';
 import '../../../../domain/entities/activity_entity.dart';
 import '../../../../domain/usecases/activities_usecases.dart';
 import '../../../../utils/activity_constants.dart';

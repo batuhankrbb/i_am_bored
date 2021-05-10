@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+
+import '../../../../../../../../core/user_interface/extensions/context_extension.dart';
+import '../../../../../../starting_files/get_it_injection_container.dart';
 import '../../../../../components/custom_bold_text_button.dart';
 import '../../../../../components/custom_text.dart';
-import '../../../../../../../../core/user_interface/extensions/context_extension.dart';
 import '../../../viewmodel/favorites_viewmodel.dart';
-import '../../../../../../starting_files/get_it_injection_container.dart';
 
 class FavoriteActivityFailure extends StatelessWidget {
   FavoriteActivityFailure({Key? key, required this.failureMessage})

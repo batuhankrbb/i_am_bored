@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import '../../../../../../../core/navigation/services/navigation_service.dart';
+
+import '../../../../../../../core/user_interface/extensions/context_extension.dart';
 import '../../../../../domain/entities/activity_entity.dart';
 import '../../../../components/custom_app_bar.dart';
-import 'components/favorite_activity_info_text.dart';
-import '../../viewmodel/favorites_viewmodel.dart';
-import '../../../../../starting_files/get_it_injection_container.dart';
-import '../../../../components/custom_bold_text_button.dart';
 import '../../../../components/custom_text.dart';
-import '../../../../../../../core/user_interface/extensions/context_extension.dart';
+import 'components/favorite_activity_info_text.dart';
 
 class ActivityFavoriteDetailPage extends StatefulWidget {
   ActivityFavoriteDetailPage({Key? key, required this.entity})

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:im_bored_app/core/navigation/services/navigation_service.dart';
+
+import '../../navigation/services/navigation_service.dart';
 
 class AlertHelper {
   AlertHelper._();

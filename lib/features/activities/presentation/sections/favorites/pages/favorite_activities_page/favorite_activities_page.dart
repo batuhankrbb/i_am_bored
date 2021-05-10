@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+
 import '../../../../../../../core/navigation/routes/navigation_routes.dart';
 import '../../../../../../../core/navigation/services/navigation_service.dart';
+import '../../../../../../../core/user_interface/extensions/context_extension.dart';
 import '../../../../../domain/entities/activity_entity.dart';
+import '../../../../../starting_files/get_it_injection_container.dart';
 import '../../../../components/custom_app_bar.dart';
 import '../../../../components/custom_big_text.dart';
 import '../../../../components/loading_indicator.dart';
-import 'components/favorite_activity_failure.dart';
-import '../favorites_detail_page/favorites_detail_page.dart';
 import '../../viewmodel/favorites_viewmodel.dart';
-import '../../../../../starting_files/get_it_injection_container.dart';
-import '../../../../components/custom_text.dart';
-import '../../../../../../../core/user_interface/extensions/context_extension.dart';
+import '../favorites_detail_page/favorites_detail_page.dart';
+import 'components/favorite_activity_failure.dart';
 import 'components/favorite_activity_list_cell.dart';
 
 class FavoriteActivitiesPage extends StatefulWidget {

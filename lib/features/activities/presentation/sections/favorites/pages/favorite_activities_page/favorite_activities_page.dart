@@ -65,7 +65,7 @@ class _FavoriteActivitiesPageState extends State<FavoriteActivitiesPage> {
       }, loading: () {
         return LoadingIndicator();
       }, completed: (result) {
-        return buildListView(result);
+        return buildListView(_favoriteViewModel.favoriteActivitiesForInterface);
       }, failed: (failure) {
         return FavoriteActivityFailure(failureMessage: failure.message);
       });
@@ -83,6 +83,7 @@ class _FavoriteActivitiesPageState extends State<FavoriteActivitiesPage> {
               onPressed: () {
                 goDetails(entities[index]);
               },
+              index: index,
               onDismissed: _favoriteViewModel.onDismiss,
             ),
           );

@@ -60,7 +60,7 @@ class ActivityLoaded extends StatelessWidget {
                 ? "remove from favorites"
                 : "add to my favorites",
             onPressed: () {
-              _homeViewModel.favoriteButtonPressed();
+              _homeViewModel.favoriteButtonPressed(entity);
             });
       },
     );
@@ -69,14 +69,10 @@ class ActivityLoaded extends StatelessWidget {
   Widget buildCustomActivityText(ActivityEntity entity) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 6),
-      child: Observer(
-        builder: (_) {
-          return CustomAutoSizeText(
-            text: entity.activity,
-            fontSize: 100,
-            maxLines: null,
-          );
-        },
+      child: CustomAutoSizeText(
+        text: entity.activity,
+        fontSize: 100,
+        maxLines: null,
       ),
     );
   }

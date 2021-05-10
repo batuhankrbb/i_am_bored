@@ -12,19 +12,23 @@ class FavoriteActivityListCell extends StatelessWidget {
       {Key? key,
       required this.entity,
       required this.onPressed,
-      required this.onDismissed})
+      required this.onDismissed,required this.index})
       : super(key: key);
 
   final ActivityEntity entity;
   final VoidCallback onPressed;
-  final Function(DismissDirection dismissDirection) onDismissed;
+  final int index;
+  final Function(DismissDirection dismissDirection, int index) onDismissed;
 
   @override
   Widget build(BuildContext context) {
     return InformerWidget(onPageBuild: (context, info) {
       return Dismissible(
         key: Key(entity.key),
-        onDismissed: onDismissed,
+        onDismissed: (direction) {
+          print("burada ${direction.index}}");
+          onDismissed(direction,index);
+        },
         direction: DismissDirection.endToStart,
         background: Container(
           color: CustomColor().red,

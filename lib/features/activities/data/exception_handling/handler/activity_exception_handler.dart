@@ -3,23 +3,28 @@ import '../exceptions/activity_exceptions.dart';
 
 class ActivityExceptionHandler {
   CustomFailure handleException(ActivityException exception) {
-    if (exception is UnknownLocalException) {
-      return CustomFailure(message: "Oh! Something went wrong in Local :(");
-    } else if (exception is UnknownRemoteException) {
-      return CustomFailure(message: "Oh! Something went wrong in Remote :(");
-    } else if (exception is ActivityNoCachedException) {
-      return CustomFailure(
+   return exception.when(
+        noCachedException: () {
+           return CustomFailure(
           message:
               "Oh! You have no internet connection and It's your first time.");
-    } else if (exception is NoInternetException) {
-      return CustomFailure(
+        },
+        unknownLocalException: () {
+          return CustomFailure(message: "Oh! Something went wrong with your device :(");
+        },
+        deletingActivityException: () {
+            return CustomFailure(message: "Oh! We couldn't delete this favorite.");
+        },
+        unknownRemoteException: () {
+          return CustomFailure(message: "Oh! Something went wrong with the internet:(");
+        },
+        noInternetException: () {
+          return CustomFailure(
           message: "It seems like you have some connection problems.");
-    } else if (exception is DeletingActivityException) {
-      return CustomFailure(message: "Oh! We couldn't delete this favorite.");
-    } else if (exception is ForbiddenActivityException){
-       return CustomFailure(message: "Oh! What you are trying to do is forbidden.");
-    }else {
-      throw Exception("App Crashed in ActivityExceptionHandler");
-    }
+        },
+        forbiddenActivityException: () {
+           return CustomFailure(
+          message: "Oh! What you are trying to do is forbidden.");
+        });
   }
 }

@@ -1,32 +1,18 @@
-abstract class ActivityException implements Exception {
-  final Exception? exception;
+import 'package:freezed_annotation/freezed_annotation.dart';
+part 'activity_exceptions.freezed.dart';
 
-  ActivityException({this.exception});
-}
-
-class ActivityNoCachedException extends ActivityException {
-  ActivityNoCachedException({Exception? exception})
-      : super(exception: exception);
-}
-
-class UnknownLocalException extends ActivityException {
-  UnknownLocalException({Exception? exception}) : super(exception: exception);
-}
-
-class DeletingActivityException extends ActivityException {
-  DeletingActivityException({Exception? exception})
-      : super(exception: exception);
-}
-
-class UnknownRemoteException extends ActivityException {
-  UnknownRemoteException({Exception? exception}) : super(exception: exception);
-}
-
-class NoInternetException extends ActivityException {
-  NoInternetException({Exception? exception}) : super(exception: exception);
-}
-
-class ForbiddenActivityException extends ActivityException {
-  ForbiddenActivityException({Exception? exception})
-      : super(exception: exception);
+@freezed
+class ActivityException with _$ActivityException{
+  @Implements(Exception)
+  const factory ActivityException.noCachedException() = NoCachedException;
+  @Implements(Exception)
+  const factory ActivityException.unknownLocalException() = UnknownLocalException;
+  @Implements(Exception)
+  const factory ActivityException.deletingActivityException() = DeletingActivityException;
+  @Implements(Exception)
+  const factory ActivityException.unknownRemoteException() = UnknownRemoteException;
+  @Implements(Exception)
+  const factory ActivityException.noInternetException() = NoInternetException;
+  @Implements(Exception)
+  const factory ActivityException.forbiddenActivityException() = ForbiddenActivityException;
 }

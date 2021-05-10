@@ -52,15 +52,15 @@ class ActivityRemoteDataSourceImplementation
 
   ActivityException _handleErrorStatusCode(int? statusCode) {
     if (statusCode == null) {
-      return UnknownRemoteException();
+      return ActivityException.unknownRemoteException();
     }
     switch (statusCode) {
       case 403:
-        return ForbiddenActivityException();
+        return ActivityException.forbiddenActivityException();
       case 599:
-        return NoInternetException();
+        return ActivityException.noInternetException();
       default:
-        return UnknownRemoteException();
+        return ActivityException.unknownRemoteException();
     }
   }
 }

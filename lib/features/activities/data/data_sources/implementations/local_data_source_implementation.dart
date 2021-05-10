@@ -19,7 +19,7 @@ class ActivityLocalDataSourceImplementation
     } catch (e) {
       ErrorHelper().printError(
           "ActivityLocalDataSourceImplementation/deleteFavoriteActivity", e);
-      throw DeletingActivityException();
+      throw ActivityException.deletingActivityException();
     }
   }
 
@@ -32,7 +32,7 @@ class ActivityLocalDataSourceImplementation
     } catch (e) {
       ErrorHelper().printError(
           "ActivityLocalDataSourceImplementation/getCachedActivity", e);
-      throw ActivityNoCachedException();
+      throw ActivityException.noCachedException();
     }
   }
 
@@ -46,7 +46,7 @@ class ActivityLocalDataSourceImplementation
     } catch (e) {
       ErrorHelper().printError(
           "ActivityLocalDataSourceImplementation/getFavoriteActivities", e);
-      throw UnknownLocalException();
+      throw ActivityException.unknownLocalException();
     }
   }
 
@@ -58,7 +58,7 @@ class ActivityLocalDataSourceImplementation
     } catch (e) {
       ErrorHelper().printError(
           "ActivityLocalDataSourceImplementation/saveActivityAsFavorite", e);
-      throw UnknownLocalException();
+      throw ActivityException.unknownLocalException();
     }
   }
 
@@ -70,7 +70,7 @@ class ActivityLocalDataSourceImplementation
     } catch (e) {
       ErrorHelper().printError(
           "ActivityLocalDataSourceImplementation/saveActivityAsFavorite", e);
-      throw UnknownLocalException();
+      throw ActivityException.unknownLocalException();
     }
   }
 }

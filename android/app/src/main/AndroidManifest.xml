@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.im_bored_app">
+    <uses-permission android:name="android.permission.INTERNET"/> 
    <application
-        android:label="im_bored_app"
+        android:label="Are You Bored?"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

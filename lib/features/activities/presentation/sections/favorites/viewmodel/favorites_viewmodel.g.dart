@@ -25,11 +25,28 @@ mixin _$FavoritesViewModel on _FavoritesViewModel, Store {
     });
   }
 
+  final _$favoriteActivitiesForInterfaceAtom =
+      Atom(name: '_FavoritesViewModel.favoriteActivitiesForInterface');
+
+  @override
+  ObservableList<ActivityEntity> get favoriteActivitiesForInterface {
+    _$favoriteActivitiesForInterfaceAtom.reportRead();
+    return super.favoriteActivitiesForInterface;
+  }
+
+  @override
+  set favoriteActivitiesForInterface(ObservableList<ActivityEntity> value) {
+    _$favoriteActivitiesForInterfaceAtom
+        .reportWrite(value, super.favoriteActivitiesForInterface, () {
+      super.favoriteActivitiesForInterface = value;
+    });
+  }
+
   final _$onDismissAsyncAction = AsyncAction('_FavoritesViewModel.onDismiss');
 
   @override
-  Future<void> onDismiss(DismissDirection direction) {
-    return _$onDismissAsyncAction.run(() => super.onDismiss(direction));
+  Future<void> onDismiss(DismissDirection direction, int index) {
+    return _$onDismissAsyncAction.run(() => super.onDismiss(direction, index));
   }
 
   final _$getAllFavoritesAsyncAction =
@@ -52,7 +69,8 @@ mixin _$FavoritesViewModel on _FavoritesViewModel, Store {
   @override
   String toString() {
     return '''
-favoriteActivities: ${favoriteActivities}
+favoriteActivities: ${favoriteActivities},
+favoriteActivitiesForInterface: ${favoriteActivitiesForInterface}
     ''';
   }
 }

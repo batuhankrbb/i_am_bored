@@ -34,6 +34,7 @@ class _ActivityDetailPageState extends State<ActivityDetailPage> {
     super.initState();
     _homeViewModel = getit.get<HomeViewModel>();
     _homeViewModel.setContext(context);
+    _homeViewModel.getRandomActivity();
   }
 
   @override

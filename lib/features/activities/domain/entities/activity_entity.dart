@@ -26,6 +26,7 @@ class ActivityEntity {
   }
 
   String get expensiveText {
-    return "This activity is %${price * 100} more expensive than others";
+    var formattedPrice = NumberHelper().fixDouble(price * 100, 2);
+    return "This activity is %$formattedPrice more expensive than others";
   }
 }

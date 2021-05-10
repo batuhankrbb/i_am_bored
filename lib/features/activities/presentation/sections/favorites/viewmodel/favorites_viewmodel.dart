@@ -22,17 +22,22 @@ abstract class _FavoritesViewModel with Store {
   @observable
   StateResult<List<ActivityEntity>> favoriteActivities = StateResult.initial();
 
+  @observable
+  ObservableList<ActivityEntity> favoriteActivitiesForInterface =
+      ObservableList<ActivityEntity>();
+
   void setContext(BuildContext context) {
     this.context = context;
   }
 
   @action
-  Future<void> onDismiss(DismissDirection direction) async {
-    favoriteActivities.maybeWhen(
-        orElse: () => null,
-        completed: (result) {
-          deleteFavoriteActivity(result[direction.index].key);
-        });
+  Future<void> onDismiss(DismissDirection direction, int index) async {
+    if (direction == DismissDirection.endToStart) {
+      print(
+          "dismiss $index | lenght: ${favoriteActivitiesForInterface.length} | actToDelete: ${favoriteActivitiesForInterface[index].activity} ");
+      deleteFavoriteActivity(
+          favoriteActivitiesForInterface[index].key);
+    }
   }
 
   @action
@@ -41,6 +46,8 @@ abstract class _FavoritesViewModel with Store {
     var favorites = await getFavoriteActivitiesUseCase.execute();
     favorites.when(success: (data) {
       favoriteActivities = StateResult.completed(data);
+      favoriteActivitiesForInterface.clear();
+      favoriteActivitiesForInterface.addAll(data);
     }, failure: (failure) {
       favoriteActivities = StateResult.failed(failure);
     });
@@ -50,7 +57,8 @@ abstract class _FavoritesViewModel with Store {
   Future<void> deleteFavoriteActivity(String key) async {
     var result = await deleteFavoriteActivityUseCase.execute(key);
     result.when(success: (_) {
-      _showAlertDialog("You deleted the activity.");
+      favoriteActivitiesForInterface
+          .removeWhere((element) => element.key == key);
     }, failure: (failure) {
       _showAlertDialog(failure.message);
     });

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter/services.dart';
 import 'core/hive/hive_helper.dart';
 import 'core/navigation/routes/navigation_routes.dart';
 import 'core/navigation/services/navigation_service.dart';
@@ -19,7 +19,12 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+     SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ]);
     return MaterialApp(
+      themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
       title: "You can't be bored!",
       initialRoute: NavigationRoute.homePage(HomePage()).rawValue,

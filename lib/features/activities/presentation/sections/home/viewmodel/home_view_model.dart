@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:im_bored_app/core/user_interface/helpers/alert_helper.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../../../../../core/result_types/state_result.dart';
@@ -23,6 +25,8 @@ abstract class _HomeViewModel with Store {
       required this.getActivityByTypeUseCase,
       required this.saveActivityAsFavoriteUseCase,
       required this.deleteFavoriteActivityUseCase});
+
+  AlertHelper _alertHelper = AlertHelper();
 
   List<String> get allActivities {
     return ActivityConstants().allActivityTypes.map((e) => e.rawValue).toList();
@@ -49,7 +53,7 @@ abstract class _HomeViewModel with Store {
   Future<void> getActivityByType() async {
     activityStateResult = StateResult.loading();
     var result = await getActivityByTypeUseCase.execute(selectedActivityType);
-     result.when(success: (data) {
+    result.when(success: (data) {
       isCurrentActivityFavorite = false;
       activityStateResult = StateResult.completed(data);
     }, failure: (failure) {
@@ -72,9 +76,9 @@ abstract class _HomeViewModel with Store {
   @action
   Future<void> favoriteButtonPressed(ActivityEntity entity) async {
     if (isCurrentActivityFavorite) {
-     await _removeActivityFromFavorite(entity);
+      await _removeActivityFromFavorite(entity);
     } else {
-    await _saveActivityAsFavorite(entity);
+      await _saveActivityAsFavorite(entity);
     }
   }
 
@@ -84,7 +88,7 @@ abstract class _HomeViewModel with Store {
     result.when(success: (_) {
       isCurrentActivityFavorite = true;
     }, failure: (failure) {
-      _showAlertDialog(failure.message);
+      _alertHelper.showCupertinoAlertDialog("Bad News", failure.message, context);
     });
   }
 
@@ -94,18 +98,8 @@ abstract class _HomeViewModel with Store {
     result.when(success: (_) {
       isCurrentActivityFavorite = false;
     }, failure: (failure) {
-      _showAlertDialog(failure.message);
+     _alertHelper.showCupertinoAlertDialog("Bad News", failure.message, context);
     });
   }
 
-  void _showAlertDialog(String message) {
-    showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            title: Text("sad :("),
-            content: Text(message),
-          );
-        });
-  }
 }

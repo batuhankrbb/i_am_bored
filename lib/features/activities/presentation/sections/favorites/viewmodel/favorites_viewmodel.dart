@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:im_bored_app/core/user_interface/helpers/alert_helper.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../../../../../core/result_types/state_result.dart';
@@ -19,6 +20,8 @@ abstract class _FavoritesViewModel with Store {
     required this.deleteFavoriteActivityUseCase,
   });
 
+  var _alertHelper = AlertHelper();
+
   @observable
   StateResult<List<ActivityEntity>> favoriteActivities = StateResult.initial();
 
@@ -33,10 +36,7 @@ abstract class _FavoritesViewModel with Store {
   @action
   Future<void> onDismiss(DismissDirection direction, int index) async {
     if (direction == DismissDirection.endToStart) {
-      print(
-          "dismiss $index | lenght: ${favoriteActivitiesForInterface.length} | actToDelete: ${favoriteActivitiesForInterface[index].activity} ");
-      deleteFavoriteActivity(
-          favoriteActivitiesForInterface[index].key);
+      deleteFavoriteActivity(favoriteActivitiesForInterface[index].key);
     }
   }
 
@@ -60,20 +60,7 @@ abstract class _FavoritesViewModel with Store {
       favoriteActivitiesForInterface
           .removeWhere((element) => element.key == key);
     }, failure: (failure) {
-      _showAlertDialog(failure.message);
+      _alertHelper.showCupertinoAlertDialog("Bad News", failure.message, context);
     });
   }
-
-  void _showAlertDialog(String message) {
-    showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            title: Text("Great!"),
-            content: Text(message),
-          );
-        });
-  }
 }
-
-//alert olayları yine. Snake bar da olabilir.

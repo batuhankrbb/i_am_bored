@@ -19,6 +19,8 @@ Network Manager is inspired by https://github.com/i-Senku
 
 ## Architecture
 
+This project is made with MobX.
+
 I used Layered Architecture by Uncle Bob x Reso Coder
 
 <img src="https://user-images.githubusercontent.com/59976112/117793690-20f7b100-b255-11eb-989e-732f0e8c0de5.png" alt="Layered Architecture" width="500" height="550"> 

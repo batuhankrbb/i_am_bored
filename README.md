@@ -4,10 +4,6 @@ Bored? is a Flutter application that suggests different activities to do in your
 
 Available platforms: iOS, Android, iPadOS
 
-App Store: https://apps.apple.com/us/app/bored-activity-suggestion/id1566910598
-
-Play Store: https://play.google.com/store/apps/details?id=com.im_bored_app
-
 Network Manager is inspired by https://github.com/i-Senku
 
 <img src="https://user-images.githubusercontent.com/59976112/117767970-57740280-b23a-11eb-818f-45587df928c8.png" alt="App Screenshot 1" width="200" height="430"> <img src="https://user-images.githubusercontent.com/59976112/117767978-593dc600-b23a-11eb-840a-ac2512e9dae5.png" alt="App Screenshot 2" width="200" height="430">
